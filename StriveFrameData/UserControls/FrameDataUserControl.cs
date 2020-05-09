@@ -103,6 +103,46 @@ namespace StriveFrameData.UserControls
         }
 
         /// <summary>
+        /// Folder browse button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFolderBrowse_Click(object sender, EventArgs e)
+        {
+           if (fldrBrowserDialog == null)
+            {
+                fldrBrowserDialog.ShowNewFolderButton = true;
+                fldrBrowserDialog.ShowDialog();
+            }
+
+            if (this.fldrBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtImportExportFileLocation.Text = fldrBrowserDialog.SelectedPath;
+            }
+        }
+
+        /// <summary>
+        /// Import Export File Location text box text changed event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtImportExportFileLocation_TextChanged(object sender, EventArgs e)
+        {
+            if (sender == null) return;
+
+            TextBox txtFileLocation = sender as TextBox;
+
+            if(txtFileLocation != null)
+            {
+                if(txtFileLocation.Text.Length > 0)
+                {
+                    txtFileLocation.Select();
+                    txtFileLocation.Select(txtImportExportFileLocation.Text.Length, 0);
+                }
+            }
+        }
+
+        /// <summary>
         /// Import button click event.
         /// </summary>
         /// <param name="sender"></param>
@@ -173,6 +213,5 @@ namespace StriveFrameData.UserControls
             }
         }
         #endregion
-
     }
 }

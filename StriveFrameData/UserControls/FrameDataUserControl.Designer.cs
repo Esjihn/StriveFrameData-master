@@ -1,4 +1,6 @@
-﻿namespace StriveFrameData.UserControls
+﻿using System.Drawing;
+
+namespace StriveFrameData.UserControls
 {
     partial class FrameDataUserControl
     {
@@ -74,6 +76,10 @@
             this.lblCrouchHeavySlash = new System.Windows.Forms.Label();
             this.lblCrouchDust = new System.Windows.Forms.Label();
             this.lblCrouchNA = new System.Windows.Forms.Label();
+            this.fldrBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.txtImportExportFileLocation = new System.Windows.Forms.TextBox();
+            this.lblFileLocation = new System.Windows.Forms.Label();
+            this.btnFolderBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnImport
@@ -546,6 +552,40 @@
             this.lblCrouchNA.TabIndex = 66;
             this.lblCrouchNA.Text = "2 NA";
             // 
+            // txtImportExportFileLocation
+            // 
+            this.txtImportExportFileLocation.BackColor = System.Drawing.Color.Gray;
+            this.txtImportExportFileLocation.Location = new System.Drawing.Point(850, 531);
+            this.txtImportExportFileLocation.Multiline = true;
+            this.txtImportExportFileLocation.Name = "txtImportExportFileLocation";
+            this.txtImportExportFileLocation.ReadOnly = true;
+            this.txtImportExportFileLocation.Size = new System.Drawing.Size(439, 54);
+            this.txtImportExportFileLocation.TabIndex = 68;
+            this.txtImportExportFileLocation.WordWrap = false;
+            this.txtImportExportFileLocation.TextChanged += new System.EventHandler(this.txtImportExportFileLocation_TextChanged);
+            // 
+            // lblFileLocation
+            // 
+            this.lblFileLocation.AutoSize = true;
+            this.lblFileLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFileLocation.Location = new System.Drawing.Point(843, 490);
+            this.lblFileLocation.Name = "lblFileLocation";
+            this.lblFileLocation.Size = new System.Drawing.Size(389, 32);
+            this.lblFileLocation.TabIndex = 69;
+            this.lblFileLocation.Text = "Export/Import Folder Location";
+            // 
+            // btnFolderBrowse
+            // 
+            this.btnFolderBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFolderBrowse.Location = new System.Drawing.Point(1227, 485);
+            this.btnFolderBrowse.Name = "btnFolderBrowse";
+            this.btnFolderBrowse.Size = new System.Drawing.Size(62, 44);
+            this.btnFolderBrowse.TabIndex = 70;
+            this.btnFolderBrowse.Text = "...";
+            this.btnFolderBrowse.UseVisualStyleBackColor = true;
+            this.btnFolderBrowse.Click += new System.EventHandler(this.btnFolderBrowse_Click);
+            // 
             // FrameDataUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
@@ -553,6 +593,9 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.Controls.Add(this.btnFolderBrowse);
+            this.Controls.Add(this.lblFileLocation);
+            this.Controls.Add(this.txtImportExportFileLocation);
             this.Controls.Add(this.lblCrouchNA);
             this.Controls.Add(this.lblCrouchDust);
             this.Controls.Add(this.lblCrouchHeavySlash);
@@ -600,7 +643,7 @@
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
             this.Name = "FrameDataUserControl";
-            this.Size = new System.Drawing.Size(1281, 723);
+            this.Size = new System.Drawing.Size(1292, 723);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,5 +697,9 @@
         private System.Windows.Forms.Label lblCrouchHeavySlash;
         private System.Windows.Forms.Label lblCrouchDust;
         private System.Windows.Forms.Label lblCrouchNA;
+        private System.Windows.Forms.FolderBrowserDialog fldrBrowserDialog;
+        private System.Windows.Forms.TextBox txtImportExportFileLocation;
+        private System.Windows.Forms.Label lblFileLocation;
+        private System.Windows.Forms.Button btnFolderBrowse;
     }
 }
