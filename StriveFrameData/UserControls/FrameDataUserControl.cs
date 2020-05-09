@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StriveFrameData.PresentationObjects;
+using StriveFrameData.Views;
 
 namespace StriveFrameData.UserControls
 {
@@ -46,22 +47,22 @@ namespace StriveFrameData.UserControls
         {
             if (IsBold)
             {
-                this.txtAdditionalNotes.Font = new Font(this.Font, FontStyle.Bold);
+                this.txtAdditionalNotes.SelectionFont = new Font(this.Font, FontStyle.Bold);
             }
 
             if (IsItalic)
             {
-                this.txtAdditionalNotes.Font = new Font(this.Font, FontStyle.Italic);
+                this.txtAdditionalNotes.SelectionFont = new Font(this.Font, FontStyle.Italic);
             }
 
             if (IsUnderline)
             {
-                this.txtAdditionalNotes.Font = new Font(this.Font, FontStyle.Underline);
+                this.txtAdditionalNotes.SelectionFont = new Font(this.Font, FontStyle.Underline);
             }
 
             if (!IsBold && !IsItalic && !IsUnderline)
             {
-                this.txtAdditionalNotes.Font = new Font(this.Font, FontStyle.Regular);
+                this.txtAdditionalNotes.SelectionFont = new Font(this.Font, FontStyle.Regular);
             }
         }
 
@@ -72,11 +73,10 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnBold_Click(object sender, EventArgs e)
         {
-            ShowButtonAsPressedWhenSelectionActive(this.btnBold.Font.Style);
-
             IsBold = !IsBold;
-        }
 
+            ShowButtonAsPressedWhenSelectionActive("Bold");
+        }
 
         /// <summary>
         /// Italic button click event.
@@ -85,9 +85,9 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnItalic_Click(object sender, EventArgs e)
         {
-            ShowButtonAsPressedWhenSelectionActive(this.btnItalic.Font.Style);
-
             IsItalic = !IsItalic;
+
+            ShowButtonAsPressedWhenSelectionActive("Italic");
         }
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnUnderline_Click(object sender, EventArgs e)
         {
-            ShowButtonAsPressedWhenSelectionActive(this.btnUnderline.Font.Style);
-
             IsUnderline = !IsUnderline;
+
+            ShowButtonAsPressedWhenSelectionActive("Underline");
         }
 
         /// <summary>
@@ -121,6 +121,7 @@ namespace StriveFrameData.UserControls
         {
 
         }
+
         #endregion
 
         #region Private Methods
@@ -128,26 +129,50 @@ namespace StriveFrameData.UserControls
         /// Emulates button pressed animation when font active.
         /// </summary>
         /// <param name="fontStyle">Style font of active button</param>
-        private void ShowButtonAsPressedWhenSelectionActive(FontStyle fontStyle)
+        private void ShowButtonAsPressedWhenSelectionActive(string fontStyle)
         {
             Color btnOriginalColor = new Color();
 
-            switch (fontStyle)
+            if (fontStyle == "Bold" && IsBold)
             {
-                case FontStyle.Bold:
-                case FontStyle.Italic:
-                case FontStyle.Underline:
-                    this.btnBold.FlatStyle = FlatStyle.Flat;
-                    btnOriginalColor = this.btnBold.FlatAppearance.BorderColor;
-                    this.btnBold.FlatAppearance.BorderColor = Color.Black;
-                    this.btnBold.FlatAppearance.BorderSize = 1;
-                    break;
-                default:
-                    this.btnBold.FlatStyle = FlatStyle.Standard;
-                    this.btnBold.FlatAppearance.BorderColor = btnOriginalColor;
-                    break;
+                this.btnBold.FlatStyle = FlatStyle.Flat;
+                btnOriginalColor = this.btnBold.FlatAppearance.BorderColor;
+                this.btnBold.FlatAppearance.BorderColor = Color.Black;
+                this.btnBold.FlatAppearance.BorderSize = 1;
+            }
+            else
+            {
+                this.btnBold.FlatStyle = FlatStyle.Standard;
+                this.btnBold.FlatAppearance.BorderColor = btnOriginalColor;
+            }
+
+            if (fontStyle == "Italic" && IsItalic)
+            {
+                this.btnItalic.FlatStyle = FlatStyle.Flat;
+                btnOriginalColor = this.btnItalic.FlatAppearance.BorderColor;
+                this.btnItalic.FlatAppearance.BorderColor = Color.Black;
+                this.btnItalic.FlatAppearance.BorderSize = 1;
+            }
+            else
+            {
+                this.btnItalic.FlatStyle = FlatStyle.Standard;
+                this.btnItalic.FlatAppearance.BorderColor = btnOriginalColor;
+            }
+
+            if (fontStyle == "Underline" && IsUnderline)
+            {
+                this.btnUnderline.FlatStyle = FlatStyle.Flat;
+                btnOriginalColor = this.btnUnderline.FlatAppearance.BorderColor;
+                this.btnUnderline.FlatAppearance.BorderColor = Color.Black;
+                this.btnUnderline.FlatAppearance.BorderSize = 1;
+            }
+            else
+            {
+                this.btnUnderline.FlatStyle = FlatStyle.Standard;
+                this.btnUnderline.FlatAppearance.BorderColor = btnOriginalColor;
             }
         }
         #endregion
+
     }
 }

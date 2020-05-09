@@ -34,7 +34,7 @@
             this.lblStandFarHeader = new System.Windows.Forms.Label();
             this.lblCrouchMovesHeader = new System.Windows.Forms.Label();
             this.lblAdditionalNotes = new System.Windows.Forms.Label();
-            this.txtAdditionalNotes = new System.Windows.Forms.TextBox();
+            this.txtAdditionalNotes = new System.Windows.Forms.RichTextBox();
             this.lblStandingPunch = new System.Windows.Forms.Label();
             this.btnBold = new System.Windows.Forms.Button();
             this.btnItalic = new System.Windows.Forms.Button();
@@ -144,13 +144,13 @@
             // 
             // txtAdditionalNotes
             // 
-            this.txtAdditionalNotes.Font = new System.Drawing.Font("Verdana", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdditionalNotes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdditionalNotes.Location = new System.Drawing.Point(56, 529);
-            this.txtAdditionalNotes.Multiline = true;
             this.txtAdditionalNotes.Name = "txtAdditionalNotes";
-            this.txtAdditionalNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAdditionalNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.txtAdditionalNotes.Size = new System.Drawing.Size(767, 191);
             this.txtAdditionalNotes.TabIndex = 6;
+            this.txtAdditionalNotes.Text = "";
             this.txtAdditionalNotes.TextChanged += new System.EventHandler(this.txtAdditionalNotes_TextChanged);
             // 
             // lblStandingPunch
@@ -614,7 +614,7 @@
         private System.Windows.Forms.Label lblStandFarHeader;
         private System.Windows.Forms.Label lblCrouchMovesHeader;
         private System.Windows.Forms.Label lblAdditionalNotes;
-        private System.Windows.Forms.TextBox txtAdditionalNotes;
+        private System.Windows.Forms.RichTextBox txtAdditionalNotes;
         private System.Windows.Forms.Label lblStandingPunch;
         private System.Windows.Forms.Button btnBold;
         private System.Windows.Forms.Button btnItalic;
