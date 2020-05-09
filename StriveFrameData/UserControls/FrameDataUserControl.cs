@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using StriveFrameData.PresentationObjects;
+using StriveFrameData.Presenters;
 using StriveFrameData.Views;
 
 namespace StriveFrameData.UserControls
@@ -109,7 +111,7 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnFolderBrowse_Click(object sender, EventArgs e)
         {
-           if (fldrBrowserDialog == null)
+            if (fldrBrowserDialog == null)
             {
                 fldrBrowserDialog.ShowNewFolderButton = true;
                 fldrBrowserDialog.ShowDialog();
@@ -149,7 +151,10 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnImport_Click(object sender, EventArgs e)
         {
+            // todo check if a file exists to import if nothing exists then return;
 
+            // todo leverage FileImportHelper to check for an read xml file into a list<MainFrameDataPO>
+            // The presenter will call view method to process import into actual ui elements
         }
 
         /// <summary>
@@ -159,7 +164,17 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnExport_Click(object sender, EventArgs e)
         {
+            MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
 
+            if (this.Parent.Parent == null) return;
+
+            // Collect all text from relevant UI elements.
+            p.CollectMainFrameDataViewList();
+
+            // todo call another presenter method that is used to create two files
+            // 1. Build Export XML for import (leverage XMLBuilder)
+            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
+            // 3. Export file to folder (leverage FileImport)
         }
 
         #endregion

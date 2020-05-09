@@ -117,14 +117,14 @@ namespace StriveFrameData.Views
         /// <summary>
         /// Create list of all MainFrameDataPO's from UI elements for use with Import/Export
         /// </summary>
-        public void MainFrameDataList()
+        public List<MainFrameDataPO> MainFrameDataList()
         {
             List<MainFrameDataPO> list = new List<MainFrameDataPO>();
 
             // TODO iterate over all UI elements
 
-            MainFrameDataPresenter p = new MainFrameDataPresenter(this);
-            p.CollectMainFrameDataList(list);
+
+            return list;
         }
         #endregion
 

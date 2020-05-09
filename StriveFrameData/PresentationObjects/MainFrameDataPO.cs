@@ -11,6 +11,14 @@ namespace StriveFrameData.PresentationObjects
     /// </summary>
     public class MainFrameDataPO
     {
+
+        #region TabPage Name
+        /// <summary>
+        /// Determines with tab page the xml was from
+        /// </summary>
+        public string TabPageName { get; set; }
+        #endregion
+
         #region Standing Far Moves UI
         public string StandingFarPunch { get; set; }
         public string StandingFarKick { get; set; }
@@ -41,6 +49,10 @@ namespace StriveFrameData.PresentationObjects
 
         #region Additional Notes UI
         public string AdditionalNotesTextBoxText { get; set; }
+        #endregion
+
+        #region ImportExport UI
+        public string ImportExportLocationText { get; set; }
         #endregion
     }
 }

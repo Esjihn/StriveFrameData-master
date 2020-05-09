@@ -30,6 +30,10 @@ namespace StriveFrameData.Presenters
         }
 
         // Setup ExportData()
+        public void ExportData()
+        {
+
+        }
 
         /// <summary>
         /// List of tabbed frame data user controls as Singleton
@@ -86,12 +90,14 @@ namespace StriveFrameData.Presenters
         /// Message data list to prepare for import or export
         /// </summary>
         /// <param name="list"></param>
-        internal List<MainFrameDataPO> CollectMainFrameDataList(List<MainFrameDataPO> list)
+        /// <returns>List of Main Frame Data PO</returns>
+        internal void CollectMainFrameDataViewList()
         {
-            if (list == null || list.Count == 0) return new List<MainFrameDataPO>();
-
             // Todo finish logic
-            return null;
+
+            List<MainFrameDataPO> list = _view.MainFrameDataList();
+
+            
         }
     }
 }

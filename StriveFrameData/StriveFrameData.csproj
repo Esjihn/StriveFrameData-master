@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Builder\PDFBuilder.cs" />
     <Compile Include="Builder\XMLBuilder.cs" />
+    <Compile Include="Helper\FileExportHelper.cs" />
     <Compile Include="Helper\FileImportHelper.cs" />
     <Compile Include="Models\FrameDataModel.cs" />
     <Compile Include="PresentationObjects\MainFrameDataPO.cs" />
