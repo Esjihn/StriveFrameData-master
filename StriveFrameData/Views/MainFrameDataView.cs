@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
+using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
-using StriveFrameData.UserControls;
+using StriveFrameData.ViewInterfaces;
 
 namespace StriveFrameData.Views
 {
-    public partial class MainFrameDataView : Form
+    public partial class MainFrameDataView : Form, IMainFrameDataView
     {
         public MainFrameDataView()
         {
@@ -21,11 +20,11 @@ namespace StriveFrameData.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MainFrameDataView_Load(object sender, System.EventArgs e)
+        private void MainFrameDataView_Load(object sender, EventArgs e)
         {
             if (sender != null)
             {
-                MainFrameDataPresenter p = new MainFrameDataPresenter();
+                MainFrameDataPresenter p = new MainFrameDataPresenter(this);
                 p.Initialize();
 
                 CreateTabPagesList();
@@ -49,8 +48,6 @@ namespace StriveFrameData.Views
         /// </summary>
         private void LoadUserControlsIntoTabs()
         {
-            MainFrameDataPresenter p = new MainFrameDataPresenter();
-
             if (TabPages != null)
             {
                 // Add user controls to tab pages
@@ -68,7 +65,7 @@ namespace StriveFrameData.Views
         /// </summary>
         private void LoadFrameDataIntoAllComboBoxes()
         {
-            MainFrameDataPresenter p = new MainFrameDataPresenter();
+            MainFrameDataPresenter p = new MainFrameDataPresenter(this);
 
             // Tab pages
             for(int i = 0; i < TabPages.Count; i++)
@@ -114,5 +111,22 @@ namespace StriveFrameData.Views
         }
 
         #endregion
+
+        #region IMainFrameDataView members
+
+        /// <summary>
+        /// Create list of all MainFrameDataPO's from UI elements for use with Import/Export
+        /// </summary>
+        public void MainFrameDataList()
+        {
+            List<MainFrameDataPO> list = new List<MainFrameDataPO>();
+
+            // TODO iterate over all UI elements
+
+            MainFrameDataPresenter p = new MainFrameDataPresenter(this);
+            p.CollectMainFrameDataList(list);
+        }
+        #endregion
+
     }
 }

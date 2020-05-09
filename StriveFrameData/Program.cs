@@ -9,7 +9,7 @@ namespace StriveFrameData
 {
     static class Program
     {
-        // TODO add builder singleton here. 
+        // TODO add builder/helper singleton here. 
 
         /// <summary>
         /// The main entry point for the application.

@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\PDFBuilder.cs" />
+    <Compile Include="Builder\XMLBuilder.cs" />
+    <Compile Include="Helper\FileImportHelper.cs" />
     <Compile Include="Models\FrameDataModel.cs" />
     <Compile Include="PresentationObjects\MainFrameDataPO.cs" />
     <Compile Include="Presenters\MainFrameDataPresenter.cs" />
@@ -55,6 +58,7 @@
     <Compile Include="UserControls\FrameDataUserControl.Designer.cs">
       <DependentUpon>FrameDataUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewInterfaces\IMainFrameDataView.cs" />
     <Compile Include="Views\MainFrameDataView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,10 +95,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Builders\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="ViewInterfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

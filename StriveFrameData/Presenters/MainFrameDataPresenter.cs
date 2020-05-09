@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StriveFrameData.Models;
+using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
+using StriveFrameData.ViewInterfaces;
+using StriveFrameData.Views;
 
 namespace StriveFrameData.Presenters
 {
@@ -13,10 +16,18 @@ namespace StriveFrameData.Presenters
     /// </summary>
     public class MainFrameDataPresenter
     {
-        // todo create a list of objects for the move drop down lists that can be 
-        // passed to the view for consumption 
+        private readonly IMainFrameDataView _view;
+
+        public MainFrameDataPresenter(IMainFrameDataView view)
+        {
+            _view = view;
+        }
 
         // Setup ImportData()
+        public void ImportData()
+        {
+
+        }
 
         // Setup ExportData()
 
@@ -69,6 +80,18 @@ namespace StriveFrameData.Presenters
             };
 
             return fdmList;
+        }
+
+        /// <summary>
+        /// Message data list to prepare for import or export
+        /// </summary>
+        /// <param name="list"></param>
+        internal List<MainFrameDataPO> CollectMainFrameDataList(List<MainFrameDataPO> list)
+        {
+            if (list == null || list.Count == 0) return new List<MainFrameDataPO>();
+
+            // Todo finish logic
+            return null;
         }
     }
 }
