@@ -160,14 +160,8 @@ namespace StriveFrameData.UserControls
         {
             MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
 
-            // Collect all text from relevant UI elements.
-            // todo
             p.CollectMainFrameDataViewList(MainFrameDataPOList());
 
-            // todo call another presenter method that is used to create two files
-            // 1. Build Export XML for import (leverage XMLBuilder)
-            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
-            // 3. Export file to folder (leverage FileImport)
         }
 
         #endregion
@@ -222,7 +216,11 @@ namespace StriveFrameData.UserControls
         }
         #endregion
 
-        public List<MainFrameDataPO> MainFrameDataPOList()
+        /// <summary>
+        /// Create MainFrameDataPO list from relevant UI elements.
+        /// </summary>
+        /// <returns></returns>
+        private List<MainFrameDataPO> MainFrameDataPOList()
         {
             List<MainFrameDataPO> list = new List<MainFrameDataPO>();
 
@@ -245,6 +243,7 @@ namespace StriveFrameData.UserControls
                             {
                                 switch (comboBoxControl.Name)
                                 {
+                                    // Standing far
                                     case "cbxStandingPunch":
                                         mfdPO.StandingFarPunch = comboBoxControl.Text;
                                         break;
@@ -254,12 +253,75 @@ namespace StriveFrameData.UserControls
                                     case "cbxStandingFarSlash":
                                         mfdPO.StandingFarSlash = comboBoxControl.Text;
                                         break;
-                                    default:
+                                    case "cbxStandingFarHeavyFlash":
+                                        mfdPO.StandingFarHeavySlash = comboBoxControl.Text;
                                         break;
-
+                                    case "cbxStandingFarDust":
+                                        mfdPO.StandingFarDust = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingFarNotApplicable":
+                                        mfdPO.StandingFarNotApplicable = comboBoxControl.Text;
+                                        break;
+                                    // Standing close
+                                    case "cbxStandingClosePunch":
+                                        mfdPO.StandingClosePunch = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingCloseKick":
+                                        mfdPO.StandingCloseKick = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingCloseSlash":
+                                        mfdPO.StandingCloseSlash = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingCloseHeavySlash":
+                                        mfdPO.StandingCloseHeavySlash = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingCloseDust":
+                                        mfdPO.StandingCloseDust = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingCloseNotApplicable":
+                                        mfdPO.StandingCloseNotApplicable = comboBoxControl.Text;
+                                        break;
+                                    // Crouching
+                                    case "cbxCrouchingPunch":
+                                        mfdPO.CrouchingPunch = comboBoxControl.Text;
+                                        break;
+                                    case "cbxCrouchingKick":
+                                        mfdPO.CrouchingKick = comboBoxControl.Text;
+                                        break;
+                                    case "cbxCrouchingSlash":
+                                        mfdPO.CrouchingSlash = comboBoxControl.Text;
+                                        break;
+                                    case "cbxCrouchingHeavySlash":
+                                        mfdPO.CrouchingHeavySlash = comboBoxControl.Text;
+                                        break;
+                                    case "cbxCrouchingDust":
+                                        mfdPO.CrouchingDust = comboBoxControl.Text;
+                                        break;
+                                    case "cbxCrouchingNotApplicable":
+                                        mfdPO.CrouchingNotApplicable = comboBoxControl.Text;
+                                        break;
                                 }
                             }
                         }
+
+                        if (MainFrameDataView.TabPages[i].Controls[j].Controls[k] is RichTextBox)
+                        {
+                            RichTextBox richTextBoxControl = MainFrameDataView.TabPages[i].Controls[j].Controls[k] as RichTextBox;
+
+                            if (richTextBoxControl != null) 
+                            {
+                                if (richTextBoxControl.Name == "txtAdditionalNotes")
+                                {
+                                    mfdPO.AdditionalNotesTextBoxText = richTextBoxControl.Text;
+                                }
+
+                                if (richTextBoxControl.Name == "txtImportExportFileLocation")
+                                {
+                                    mfdPO.ImportExportLocationText = richTextBoxControl.Text;
+                                }
+                            }
+                        }
+
                         list.Add(mfdPO);
                     }
                 }

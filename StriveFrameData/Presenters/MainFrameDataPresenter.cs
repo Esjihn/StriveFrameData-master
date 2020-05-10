@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using StriveFrameData.Builder;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
@@ -93,8 +96,29 @@ namespace StriveFrameData.Presenters
         /// <returns>List of Main Frame Data PO</returns>
         internal void CollectMainFrameDataViewList(List<MainFrameDataPO> list)
         {
-            // Todo finish logic
-            List<MainFrameDataPO> newList = list;
+            if (list == null && list.Count == 0) return;
+            XMLBuilder xmlBuilder = new XMLBuilder();
+            PDFBuilder pdfBuilder = new PDFBuilder();
+
+            string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string path = myDocuments + @"\ExportList.txt";
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    PropertyInfo[] properties = typeof(MainFrameDataPO).GetProperties();
+                    foreach (PropertyInfo propertyInfo in properties)
+                    {
+                        sw.WriteLine(propertyInfo.GetValue(list[i]));
+                    }
+                }
+            }
+
+            // todo call another presenter method that is used to create two files
+            // 1. Build Export XML for import (leverage XMLBuilder)
+            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
+            // 3. Export file to folder (leverage FileImport)
         }
     }
 }
