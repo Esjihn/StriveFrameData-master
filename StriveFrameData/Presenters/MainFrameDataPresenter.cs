@@ -35,13 +35,20 @@ namespace StriveFrameData.Presenters
         // Setup ExportData()
         public void ExportData()
         {
-
+            // 1. Build Export XML for import (leverage XMLBuilder)
+            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
+            // 3. Export file to folder (leverage FileImport)
         }
 
         /// <summary>
         /// List of tabbed frame data user controls as Singleton
         /// </summary>
         public static List<FrameDataUserControl> FrameDataUserControls { get; set; }
+
+        /// <summary>
+        /// Complete Frame Data list from UI
+        /// </summary>
+        private List<MainFrameDataPO> CompleteFrameDataList { get; set; }
 
         /// <summary>
         /// Load User Control List into p.FrameDataUserControls
@@ -88,37 +95,18 @@ namespace StriveFrameData.Presenters
 
             return fdmList;
         }
-
+        
         /// <summary>
-        /// Message data list to prepare for import or export
+        /// Collect Frame Data UI data and place into property for use. 
         /// </summary>
         /// <param name="list"></param>
         /// <returns>List of Main Frame Data PO</returns>
-        internal void CollectMainFrameDataViewList(List<MainFrameDataPO> list)
+        internal void CollectMainFrameDataViewList(List<MainFrameDataPO> list) 
         {
             if (list == null && list.Count == 0) return;
-            XMLBuilder xmlBuilder = new XMLBuilder();
-            PDFBuilder pdfBuilder = new PDFBuilder();
 
-            string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string path = myDocuments + @"\ExportList.txt";
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                using (StreamWriter sw = new StreamWriter(path))
-                {
-                    PropertyInfo[] properties = typeof(MainFrameDataPO).GetProperties();
-                    foreach (PropertyInfo propertyInfo in properties)
-                    {
-                        sw.WriteLine(propertyInfo.GetValue(list[i]));
-                    }
-                }
-            }
-
-            // todo call another presenter method that is used to create two files
-            // 1. Build Export XML for import (leverage XMLBuilder)
-            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
-            // 3. Export file to folder (leverage FileImport)
+            CompleteFrameDataList = list;
         }
+
     }
 }

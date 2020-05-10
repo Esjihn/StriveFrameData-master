@@ -77,7 +77,7 @@ namespace StriveFrameData.UserControls
             this.lblCrouchDust = new System.Windows.Forms.Label();
             this.lblCrouchNA = new System.Windows.Forms.Label();
             this.fldrBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.txtImportExportFileLocation = new System.Windows.Forms.TextBox();
+            this.txtImportExportFileLocation = new System.Windows.Forms.RichTextBox();
             this.lblFileLocation = new System.Windows.Forms.Label();
             this.btnFolderBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -698,7 +698,7 @@ namespace StriveFrameData.UserControls
         private System.Windows.Forms.Label lblCrouchDust;
         private System.Windows.Forms.Label lblCrouchNA;
         private System.Windows.Forms.FolderBrowserDialog fldrBrowserDialog;
-        private System.Windows.Forms.TextBox txtImportExportFileLocation;
+        private System.Windows.Forms.RichTextBox txtImportExportFileLocation;
         private System.Windows.Forms.Label lblFileLocation;
         private System.Windows.Forms.Button btnFolderBrowse;
     }

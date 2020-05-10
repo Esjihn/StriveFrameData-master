@@ -227,13 +227,14 @@ namespace StriveFrameData.UserControls
             // Tab pages
             for (int i = 0; i < MainFrameDataView.TabPages.Count; i++)
             {
+                MainFrameDataPO mfdPO = new MainFrameDataPO();
+                mfdPO.TabPageName = MainFrameDataView.TabPages[i].Name;
                 // User controls inside tab page
                 for (int j = 0; j < MainFrameDataView.TabPages[i].Controls.Count; j++)
                 {
                     // User control controlCollection
                     for (int k = 0; k < MainFrameDataView.TabPages[i].Controls[j].Controls.Count; k++)
                     {
-                        MainFrameDataPO mfdPO = new MainFrameDataPO();
                         // Fill all combo boxes
                         if (MainFrameDataView.TabPages[i].Controls[j].Controls[k] is ComboBox)
                         {
@@ -247,19 +248,19 @@ namespace StriveFrameData.UserControls
                                     case "cbxStandingPunch":
                                         mfdPO.StandingFarPunch = comboBoxControl.Text;
                                         break;
-                                    case "cbxStandingFarKick":
+                                    case "cbxStandingKick":
                                         mfdPO.StandingFarKick = comboBoxControl.Text;
                                         break;
-                                    case "cbxStandingFarSlash":
+                                    case "cbxStandingSlash":
                                         mfdPO.StandingFarSlash = comboBoxControl.Text;
                                         break;
-                                    case "cbxStandingFarHeavyFlash":
+                                    case "cbxHeavySlash":
                                         mfdPO.StandingFarHeavySlash = comboBoxControl.Text;
                                         break;
-                                    case "cbxStandingFarDust":
+                                    case "cbxStandingDust":
                                         mfdPO.StandingFarDust = comboBoxControl.Text;
                                         break;
-                                    case "cbxStandingFarNotApplicable":
+                                    case "cbxStandingNA":
                                         mfdPO.StandingFarNotApplicable = comboBoxControl.Text;
                                         break;
                                     // Standing close
@@ -285,13 +286,13 @@ namespace StriveFrameData.UserControls
                                     case "cbxCrouchingPunch":
                                         mfdPO.CrouchingPunch = comboBoxControl.Text;
                                         break;
-                                    case "cbxCrouchingKick":
+                                    case "cbxCrouchKick":
                                         mfdPO.CrouchingKick = comboBoxControl.Text;
                                         break;
-                                    case "cbxCrouchingSlash":
+                                    case "cbxCrouchSlash":
                                         mfdPO.CrouchingSlash = comboBoxControl.Text;
                                         break;
-                                    case "cbxCrouchingHeavySlash":
+                                    case "cbxCrouchHeavySlash":
                                         mfdPO.CrouchingHeavySlash = comboBoxControl.Text;
                                         break;
                                     case "cbxCrouchingDust":
@@ -321,10 +322,10 @@ namespace StriveFrameData.UserControls
                                 }
                             }
                         }
-
-                        list.Add(mfdPO);
+                            
                     }
                 }
+                list.Add(mfdPO);
             }
             return list;
         }
