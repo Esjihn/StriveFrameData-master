@@ -124,6 +124,8 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void txtImportExportFileLocation_TextChanged(object sender, EventArgs e)
         {
+            // todo change this text for all user control instances using presenter static list of tab pages
+
             if (sender == null) return;
 
             TextBox txtFileLocation = sender as TextBox;
@@ -161,6 +163,7 @@ namespace StriveFrameData.UserControls
             MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
 
             p.CollectMainFrameDataViewList(MainFrameDataPOList());
+            p.ExportData();
 
         }
 

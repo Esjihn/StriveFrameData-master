@@ -38,6 +38,8 @@ namespace StriveFrameData.Presenters
         {
             // 1. Build Export XML for import (leverage XMLBuilder)
             XMLBuilder xmlBuilder = new XMLBuilder();
+            MainFrameDataPO path = CompleteFrameDataList.First(m => m.ImportExportLocationText != string.Empty);
+            xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText);
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
             PDFBuilder pdfBuilder = new PDFBuilder();
