@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using StriveFrameData.Builder;
+using StriveFrameData.Helper;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
@@ -36,8 +37,13 @@ namespace StriveFrameData.Presenters
         public void ExportData()
         {
             // 1. Build Export XML for import (leverage XMLBuilder)
+            XMLBuilder xmlBuilder = new XMLBuilder();
+
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
+            PDFBuilder pdfBuilder = new PDFBuilder();
+
             // 3. Export file to folder (leverage FileImport)
+            FileExportHelper exportHelper = new FileExportHelper();
         }
 
         /// <summary>
@@ -103,7 +109,7 @@ namespace StriveFrameData.Presenters
         /// <returns>List of Main Frame Data PO</returns>
         internal void CollectMainFrameDataViewList(List<MainFrameDataPO> list) 
         {
-            if (list == null && list.Count == 0) return;
+            if (list == null || list.Count == 0) return;
 
             CompleteFrameDataList = list;
         }
