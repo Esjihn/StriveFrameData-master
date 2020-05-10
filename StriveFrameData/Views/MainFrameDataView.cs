@@ -114,19 +114,6 @@ namespace StriveFrameData.Views
 
         #region IMainFrameDataView members
 
-        /// <summary>
-        /// Create list of all MainFrameDataPO's from UI elements for use with Import/Export
-        /// </summary>
-        public List<MainFrameDataPO> MainFrameDataList()
-        {
-            List<MainFrameDataPO> list = new List<MainFrameDataPO>();
-
-            // TODO iterate over all UI elements
-
-
-            return list;
-        }
         #endregion
-
     }
 }

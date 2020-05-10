@@ -91,13 +91,10 @@ namespace StriveFrameData.Presenters
         /// </summary>
         /// <param name="list"></param>
         /// <returns>List of Main Frame Data PO</returns>
-        internal void CollectMainFrameDataViewList()
+        internal void CollectMainFrameDataViewList(List<MainFrameDataPO> list)
         {
             // Todo finish logic
-
-            List<MainFrameDataPO> list = _view.MainFrameDataList();
-
-            
+            List<MainFrameDataPO> newList = list;
         }
     }
 }

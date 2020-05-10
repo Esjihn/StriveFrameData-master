@@ -9,6 +9,5 @@ namespace StriveFrameData.ViewInterfaces
 {
     public interface IMainFrameDataView
     {
-        List<MainFrameDataPO> MainFrameDataList();
     }
 }

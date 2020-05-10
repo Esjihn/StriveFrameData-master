@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
 using StriveFrameData.Views;
@@ -166,10 +160,9 @@ namespace StriveFrameData.UserControls
         {
             MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
 
-            if (this.Parent.Parent == null) return;
-
             // Collect all text from relevant UI elements.
-            p.CollectMainFrameDataViewList();
+            // todo
+            p.CollectMainFrameDataViewList(MainFrameDataPOList());
 
             // todo call another presenter method that is used to create two files
             // 1. Build Export XML for import (leverage XMLBuilder)
@@ -228,5 +221,11 @@ namespace StriveFrameData.UserControls
             }
         }
         #endregion
+
+        public List<MainFrameDataPO> MainFrameDataPOList()
+        {
+            // todo 
+            return new List<MainFrameDataPO>();
+        }
     }
 }
