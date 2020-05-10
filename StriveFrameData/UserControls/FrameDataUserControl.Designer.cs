@@ -47,18 +47,18 @@ namespace StriveFrameData.UserControls
             this.cbxStandingSlash = new System.Windows.Forms.ComboBox();
             this.cbxStandingKick = new System.Windows.Forms.ComboBox();
             this.cbxStandingNA = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
-            this.comboBox17 = new System.Windows.Forms.ComboBox();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.cbxStandingCloseNotApplicable = new System.Windows.Forms.ComboBox();
+            this.cbxStandingCloseKick = new System.Windows.Forms.ComboBox();
+            this.cbxStandingCloseSlash = new System.Windows.Forms.ComboBox();
+            this.cbxStandingCloseHeavySlash = new System.Windows.Forms.ComboBox();
+            this.cbxStandingCloseDust = new System.Windows.Forms.ComboBox();
+            this.cbxStandingClosePunch = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchingNotApplicable = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchKick = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchSlash = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchHeavySlash = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchingDust = new System.Windows.Forms.ComboBox();
+            this.cbxCrouchingPunch = new System.Windows.Forms.ComboBox();
             this.lblStandingKick = new System.Windows.Forms.Label();
             this.lblStandingSlash = new System.Windows.Forms.Label();
             this.lblStandingHeavySlash = new System.Windows.Forms.Label();
@@ -257,113 +257,113 @@ namespace StriveFrameData.UserControls
             this.cbxStandingNA.Size = new System.Drawing.Size(278, 40);
             this.cbxStandingNA.TabIndex = 37;
             // 
-            // comboBox7
+            // cbxStandingCloseNotApplicable
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(546, 341);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(278, 40);
-            this.comboBox7.TabIndex = 43;
+            this.cbxStandingCloseNotApplicable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingCloseNotApplicable.FormattingEnabled = true;
+            this.cbxStandingCloseNotApplicable.Location = new System.Drawing.Point(546, 341);
+            this.cbxStandingCloseNotApplicable.Name = "cbxStandingCloseNotApplicable";
+            this.cbxStandingCloseNotApplicable.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingCloseNotApplicable.TabIndex = 43;
             // 
-            // comboBox8
+            // cbxStandingCloseKick
             // 
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(546, 133);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(278, 40);
-            this.comboBox8.TabIndex = 42;
+            this.cbxStandingCloseKick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingCloseKick.FormattingEnabled = true;
+            this.cbxStandingCloseKick.Location = new System.Drawing.Point(546, 133);
+            this.cbxStandingCloseKick.Name = "cbxStandingCloseKick";
+            this.cbxStandingCloseKick.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingCloseKick.TabIndex = 42;
             // 
-            // comboBox9
+            // cbxStandingCloseSlash
             // 
-            this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(546, 185);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(278, 40);
-            this.comboBox9.TabIndex = 41;
+            this.cbxStandingCloseSlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingCloseSlash.FormattingEnabled = true;
+            this.cbxStandingCloseSlash.Location = new System.Drawing.Point(546, 185);
+            this.cbxStandingCloseSlash.Name = "cbxStandingCloseSlash";
+            this.cbxStandingCloseSlash.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingCloseSlash.TabIndex = 41;
             // 
-            // comboBox10
+            // cbxStandingCloseHeavySlash
             // 
-            this.comboBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(546, 237);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(278, 40);
-            this.comboBox10.TabIndex = 40;
+            this.cbxStandingCloseHeavySlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingCloseHeavySlash.FormattingEnabled = true;
+            this.cbxStandingCloseHeavySlash.Location = new System.Drawing.Point(546, 237);
+            this.cbxStandingCloseHeavySlash.Name = "cbxStandingCloseHeavySlash";
+            this.cbxStandingCloseHeavySlash.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingCloseHeavySlash.TabIndex = 40;
             // 
-            // comboBox11
+            // cbxStandingCloseDust
             // 
-            this.comboBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(546, 289);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(278, 40);
-            this.comboBox11.TabIndex = 39;
+            this.cbxStandingCloseDust.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingCloseDust.FormattingEnabled = true;
+            this.cbxStandingCloseDust.Location = new System.Drawing.Point(546, 289);
+            this.cbxStandingCloseDust.Name = "cbxStandingCloseDust";
+            this.cbxStandingCloseDust.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingCloseDust.TabIndex = 39;
             // 
-            // comboBox12
+            // cbxStandingClosePunch
             // 
-            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(546, 81);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(278, 40);
-            this.comboBox12.TabIndex = 38;
+            this.cbxStandingClosePunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxStandingClosePunch.FormattingEnabled = true;
+            this.cbxStandingClosePunch.Location = new System.Drawing.Point(546, 81);
+            this.cbxStandingClosePunch.Name = "cbxStandingClosePunch";
+            this.cbxStandingClosePunch.Size = new System.Drawing.Size(278, 40);
+            this.cbxStandingClosePunch.TabIndex = 38;
             // 
-            // comboBox13
+            // cbxCrouchingNotApplicable
             // 
-            this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(954, 341);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(278, 40);
-            this.comboBox13.TabIndex = 49;
+            this.cbxCrouchingNotApplicable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchingNotApplicable.FormattingEnabled = true;
+            this.cbxCrouchingNotApplicable.Location = new System.Drawing.Point(954, 341);
+            this.cbxCrouchingNotApplicable.Name = "cbxCrouchingNotApplicable";
+            this.cbxCrouchingNotApplicable.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchingNotApplicable.TabIndex = 49;
             // 
-            // comboBox14
+            // cbxCrouchKick
             // 
-            this.comboBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(954, 133);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(278, 40);
-            this.comboBox14.TabIndex = 48;
+            this.cbxCrouchKick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchKick.FormattingEnabled = true;
+            this.cbxCrouchKick.Location = new System.Drawing.Point(954, 133);
+            this.cbxCrouchKick.Name = "cbxCrouchKick";
+            this.cbxCrouchKick.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchKick.TabIndex = 48;
             // 
-            // comboBox15
+            // cbxCrouchSlash
             // 
-            this.comboBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(954, 185);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(278, 40);
-            this.comboBox15.TabIndex = 47;
+            this.cbxCrouchSlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchSlash.FormattingEnabled = true;
+            this.cbxCrouchSlash.Location = new System.Drawing.Point(954, 185);
+            this.cbxCrouchSlash.Name = "cbxCrouchSlash";
+            this.cbxCrouchSlash.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchSlash.TabIndex = 47;
             // 
-            // comboBox16
+            // cbxCrouchHeavySlash
             // 
-            this.comboBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(954, 237);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(278, 40);
-            this.comboBox16.TabIndex = 46;
+            this.cbxCrouchHeavySlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchHeavySlash.FormattingEnabled = true;
+            this.cbxCrouchHeavySlash.Location = new System.Drawing.Point(954, 237);
+            this.cbxCrouchHeavySlash.Name = "cbxCrouchHeavySlash";
+            this.cbxCrouchHeavySlash.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchHeavySlash.TabIndex = 46;
             // 
-            // comboBox17
+            // cbxCrouchingDust
             // 
-            this.comboBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(954, 289);
-            this.comboBox17.Name = "comboBox17";
-            this.comboBox17.Size = new System.Drawing.Size(278, 40);
-            this.comboBox17.TabIndex = 45;
+            this.cbxCrouchingDust.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchingDust.FormattingEnabled = true;
+            this.cbxCrouchingDust.Location = new System.Drawing.Point(954, 289);
+            this.cbxCrouchingDust.Name = "cbxCrouchingDust";
+            this.cbxCrouchingDust.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchingDust.TabIndex = 45;
             // 
-            // comboBox18
+            // cbxCrouchingPunch
             // 
-            this.comboBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(954, 81);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(278, 40);
-            this.comboBox18.TabIndex = 44;
+            this.cbxCrouchingPunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCrouchingPunch.FormattingEnabled = true;
+            this.cbxCrouchingPunch.Location = new System.Drawing.Point(954, 81);
+            this.cbxCrouchingPunch.Name = "cbxCrouchingPunch";
+            this.cbxCrouchingPunch.Size = new System.Drawing.Size(278, 40);
+            this.cbxCrouchingPunch.TabIndex = 44;
             // 
             // lblStandingKick
             // 
@@ -613,18 +613,18 @@ namespace StriveFrameData.UserControls
             this.Controls.Add(this.lblStandingHeavySlash);
             this.Controls.Add(this.lblStandingSlash);
             this.Controls.Add(this.lblStandingKick);
-            this.Controls.Add(this.comboBox13);
-            this.Controls.Add(this.comboBox14);
-            this.Controls.Add(this.comboBox15);
-            this.Controls.Add(this.comboBox16);
-            this.Controls.Add(this.comboBox17);
-            this.Controls.Add(this.comboBox18);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox9);
-            this.Controls.Add(this.comboBox10);
-            this.Controls.Add(this.comboBox11);
-            this.Controls.Add(this.comboBox12);
+            this.Controls.Add(this.cbxCrouchingNotApplicable);
+            this.Controls.Add(this.cbxCrouchKick);
+            this.Controls.Add(this.cbxCrouchSlash);
+            this.Controls.Add(this.cbxCrouchHeavySlash);
+            this.Controls.Add(this.cbxCrouchingDust);
+            this.Controls.Add(this.cbxCrouchingPunch);
+            this.Controls.Add(this.cbxStandingCloseNotApplicable);
+            this.Controls.Add(this.cbxStandingCloseKick);
+            this.Controls.Add(this.cbxStandingCloseSlash);
+            this.Controls.Add(this.cbxStandingCloseHeavySlash);
+            this.Controls.Add(this.cbxStandingCloseDust);
+            this.Controls.Add(this.cbxStandingClosePunch);
             this.Controls.Add(this.cbxStandingNA);
             this.Controls.Add(this.cbxStandingKick);
             this.Controls.Add(this.cbxStandingSlash);
@@ -668,18 +668,18 @@ namespace StriveFrameData.UserControls
         private System.Windows.Forms.ComboBox cbxStandingSlash;
         private System.Windows.Forms.ComboBox cbxStandingKick;
         private System.Windows.Forms.ComboBox cbxStandingNA;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.ComboBox comboBox16;
-        private System.Windows.Forms.ComboBox comboBox17;
-        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox cbxStandingCloseNotApplicable;
+        private System.Windows.Forms.ComboBox cbxStandingCloseKick;
+        private System.Windows.Forms.ComboBox cbxStandingCloseSlash;
+        private System.Windows.Forms.ComboBox cbxStandingCloseHeavySlash;
+        private System.Windows.Forms.ComboBox cbxStandingCloseDust;
+        private System.Windows.Forms.ComboBox cbxStandingClosePunch;
+        private System.Windows.Forms.ComboBox cbxCrouchingNotApplicable;
+        private System.Windows.Forms.ComboBox cbxCrouchKick;
+        private System.Windows.Forms.ComboBox cbxCrouchSlash;
+        private System.Windows.Forms.ComboBox cbxCrouchHeavySlash;
+        private System.Windows.Forms.ComboBox cbxCrouchingDust;
+        private System.Windows.Forms.ComboBox cbxCrouchingPunch;
         private System.Windows.Forms.Label lblStandingKick;
         private System.Windows.Forms.Label lblStandingSlash;
         private System.Windows.Forms.Label lblStandingHeavySlash;

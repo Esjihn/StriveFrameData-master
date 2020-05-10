@@ -38,7 +38,7 @@ namespace StriveFrameData.Views
         /// <summary>
         /// Property with current list of TabPages as Singleton
         /// </summary>
-        private static List<TabPage> TabPages { get; set; }
+        internal static List<TabPage> TabPages { get; set; }
 
         #endregion
 

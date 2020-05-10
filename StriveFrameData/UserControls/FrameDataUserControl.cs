@@ -224,8 +224,47 @@ namespace StriveFrameData.UserControls
 
         public List<MainFrameDataPO> MainFrameDataPOList()
         {
-            // todo 
-            return new List<MainFrameDataPO>();
+            List<MainFrameDataPO> list = new List<MainFrameDataPO>();
+
+            // Tab pages
+            for (int i = 0; i < MainFrameDataView.TabPages.Count; i++)
+            {
+                // User controls inside tab page
+                for (int j = 0; j < MainFrameDataView.TabPages[i].Controls.Count; j++)
+                {
+                    // User control controlCollection
+                    for (int k = 0; k < MainFrameDataView.TabPages[i].Controls[j].Controls.Count; k++)
+                    {
+                        MainFrameDataPO mfdPO = new MainFrameDataPO();
+                        // Fill all combo boxes
+                        if (MainFrameDataView.TabPages[i].Controls[j].Controls[k] is ComboBox)
+                        {
+                            ComboBox comboBoxControl = MainFrameDataView.TabPages[i].Controls[j].Controls[k] as ComboBox;
+
+                            if (comboBoxControl != null)
+                            {
+                                switch (comboBoxControl.Name)
+                                {
+                                    case "cbxStandingPunch":
+                                        mfdPO.StandingFarPunch = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingFarKick":
+                                        mfdPO.StandingFarKick = comboBoxControl.Text;
+                                        break;
+                                    case "cbxStandingFarSlash":
+                                        mfdPO.StandingFarSlash = comboBoxControl.Text;
+                                        break;
+                                    default:
+                                        break;
+
+                                }
+                            }
+                        }
+                        list.Add(mfdPO);
+                    }
+                }
+            }
+            return list;
         }
     }
 }

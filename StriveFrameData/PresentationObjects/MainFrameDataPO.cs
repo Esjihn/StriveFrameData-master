@@ -54,5 +54,6 @@ namespace StriveFrameData.PresentationObjects
         #region ImportExport UI
         public string ImportExportLocationText { get; set; }
         #endregion
+
     }
 }
