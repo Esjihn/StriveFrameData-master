@@ -134,10 +134,6 @@ namespace StriveFrameData.UserControls
             {
                 if(txtFileLocation.Text.Length > 0)
                 {
-                    txtFileLocation.Select();
-                    txtFileLocation.Select(txtImportExportFileLocation.Text.Length, 0);
-
-                    
                     // Maintain same folder selection across all tab pages.
                     for(int i = 0; i < MainFrameDataPresenter.FrameDataUserControls.Count; i++)
                     {
