@@ -128,7 +128,7 @@ namespace StriveFrameData.UserControls
 
             if (sender == null) return;
 
-            TextBox txtFileLocation = sender as TextBox;
+            RichTextBox txtFileLocation = sender as RichTextBox;
 
             if(txtFileLocation != null)
             {
@@ -136,6 +136,13 @@ namespace StriveFrameData.UserControls
                 {
                     txtFileLocation.Select();
                     txtFileLocation.Select(txtImportExportFileLocation.Text.Length, 0);
+
+                    
+                    // Maintain same folder selection across all tab pages.
+                    for(int i = 0; i < MainFrameDataPresenter.FrameDataUserControls.Count; i++)
+                    {
+                        MainFrameDataPresenter.FrameDataUserControls[i].txtImportExportFileLocation.Text = txtFileLocation.Text;
+                    }
                 }
             }
         }
@@ -164,7 +171,6 @@ namespace StriveFrameData.UserControls
 
             p.CollectMainFrameDataViewList(MainFrameDataPOList());
             p.ExportData();
-
         }
 
         #endregion
