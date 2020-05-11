@@ -39,7 +39,17 @@ namespace StriveFrameData.Presenters
             // 1. Build Export XML for import (leverage XMLBuilder)
             XMLBuilder xmlBuilder = new XMLBuilder();
             MainFrameDataPO path = CompleteFrameDataList.First(m => m.ImportExportLocationText != string.Empty);
-            xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText);
+            
+            if (path != null)
+            {
+                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText);
+            }
+            else
+            {
+                // Place into my documents folder if user hasn't set an actual folder
+                string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myDocuments);
+            }
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
             PDFBuilder pdfBuilder = new PDFBuilder();
