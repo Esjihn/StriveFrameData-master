@@ -30,10 +30,6 @@ namespace StriveFrameData.Builder
 
             // todo create xml
             
-            if (list is List<MainFrameDataPO>)
-            {
-                
-            }
         }
     }
 }
