@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,20 @@ namespace StriveFrameData.Builder
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
             // todo create xml
-         
-            
+            XElement element = 
+                new XElement("MainFrameDataPO", 
+                    from po in list
+                     select new XElement("StandingCloseMoves",
+                         new XElement("StandingClosePunch", po.StandingClosePunch),
+                         new XElement("StandingCloseKick", po.StandingCloseKick)));
+
+            using (StreamWriter sw = new StreamWriter(
+                Environment.GetFolderPath(
+                    Environment.SpecialFolder.MyDocuments) + @"\test.txt"))
+            {
+                sw.WriteLine(element);
+            }
+
         }
     }
 }

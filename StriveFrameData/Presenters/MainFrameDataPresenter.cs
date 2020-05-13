@@ -38,17 +38,20 @@ namespace StriveFrameData.Presenters
         {
             // 1. Build Export XML for import (leverage XMLBuilder)
             XMLBuilder xmlBuilder = new XMLBuilder();
+            DateTime date = DateTime.Now;
             MainFrameDataPO path = CompleteFrameDataList.First(m => m.ImportExportLocationText != string.Empty);
-            
+            string codedPath = @"\" + date + "_FrameData.xml";
+
             if (path != null)
             {
-                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText);
+                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPath);
             }
             else
             {
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myDocuments);
+                string myPath = myDocuments + @"\" + date + "_FrameData.xml";
+                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
