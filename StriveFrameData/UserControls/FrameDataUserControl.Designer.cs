@@ -80,6 +80,7 @@ namespace StriveFrameData.UserControls
             this.txtImportExportFileLocation = new System.Windows.Forms.RichTextBox();
             this.lblFileLocation = new System.Windows.Forms.Label();
             this.btnFolderBrowse = new System.Windows.Forms.Button();
+            this.btnOpenExternalNotesForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnImport
@@ -157,7 +158,6 @@ namespace StriveFrameData.UserControls
             this.txtAdditionalNotes.Size = new System.Drawing.Size(767, 191);
             this.txtAdditionalNotes.TabIndex = 6;
             this.txtAdditionalNotes.Text = "";
-            this.txtAdditionalNotes.TextChanged += new System.EventHandler(this.txtAdditionalNotes_TextChanged);
             // 
             // lblStandingPunch
             // 
@@ -172,36 +172,24 @@ namespace StriveFrameData.UserControls
             // 
             // btnBold
             // 
-            this.btnBold.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBold.Location = new System.Drawing.Point(318, 479);
+            this.btnBold.Location = new System.Drawing.Point(0, 0);
             this.btnBold.Name = "btnBold";
-            this.btnBold.Size = new System.Drawing.Size(54, 44);
-            this.btnBold.TabIndex = 29;
-            this.btnBold.Text = "B";
-            this.btnBold.UseVisualStyleBackColor = true;
-            this.btnBold.Click += new System.EventHandler(this.btnBold_Click);
+            this.btnBold.Size = new System.Drawing.Size(75, 23);
+            this.btnBold.TabIndex = 73;
             // 
             // btnItalic
             // 
-            this.btnItalic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItalic.Location = new System.Drawing.Point(378, 479);
+            this.btnItalic.Location = new System.Drawing.Point(0, 0);
             this.btnItalic.Name = "btnItalic";
-            this.btnItalic.Size = new System.Drawing.Size(54, 44);
-            this.btnItalic.TabIndex = 30;
-            this.btnItalic.Text = "I";
-            this.btnItalic.UseVisualStyleBackColor = true;
-            this.btnItalic.Click += new System.EventHandler(this.btnItalic_Click);
+            this.btnItalic.Size = new System.Drawing.Size(75, 23);
+            this.btnItalic.TabIndex = 72;
             // 
             // btnUnderline
             // 
-            this.btnUnderline.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnderline.Location = new System.Drawing.Point(438, 479);
+            this.btnUnderline.Location = new System.Drawing.Point(0, 0);
             this.btnUnderline.Name = "btnUnderline";
-            this.btnUnderline.Size = new System.Drawing.Size(54, 44);
-            this.btnUnderline.TabIndex = 31;
-            this.btnUnderline.Text = "&U";
-            this.btnUnderline.UseVisualStyleBackColor = true;
-            this.btnUnderline.Click += new System.EventHandler(this.btnUnderline_Click);
+            this.btnUnderline.Size = new System.Drawing.Size(75, 23);
+            this.btnUnderline.TabIndex = 71;
             // 
             // cbxStandingPunch
             // 
@@ -586,6 +574,16 @@ namespace StriveFrameData.UserControls
             this.btnFolderBrowse.UseVisualStyleBackColor = true;
             this.btnFolderBrowse.Click += new System.EventHandler(this.btnFolderBrowse_Click);
             // 
+            // btnOpenExternalNotesForm
+            // 
+            this.btnOpenExternalNotesForm.Font = new System.Drawing.Font("Times New Roman", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenExternalNotesForm.Location = new System.Drawing.Point(326, 477);
+            this.btnOpenExternalNotesForm.Name = "btnOpenExternalNotesForm";
+            this.btnOpenExternalNotesForm.Size = new System.Drawing.Size(440, 46);
+            this.btnOpenExternalNotesForm.TabIndex = 74;
+            this.btnOpenExternalNotesForm.Text = "Open External Additional Notes Form";
+            this.btnOpenExternalNotesForm.UseVisualStyleBackColor = true;
+            // 
             // FrameDataUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
@@ -593,6 +591,7 @@ namespace StriveFrameData.UserControls
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.Controls.Add(this.btnOpenExternalNotesForm);
             this.Controls.Add(this.btnFolderBrowse);
             this.Controls.Add(this.lblFileLocation);
             this.Controls.Add(this.txtImportExportFileLocation);
@@ -701,5 +700,6 @@ namespace StriveFrameData.UserControls
         private System.Windows.Forms.RichTextBox txtImportExportFileLocation;
         private System.Windows.Forms.Label lblFileLocation;
         private System.Windows.Forms.Button btnFolderBrowse;
+        private System.Windows.Forms.Button btnOpenExternalNotesForm;
     }
 }

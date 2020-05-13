@@ -36,9 +36,12 @@ namespace StriveFrameData.Builder
                 StringBuilder sb = new StringBuilder();
                 while (reader.Read())
                 {
+                    // todo further formatting is needed for readability.
+                    
                     sb.Append(reader.Name);
                     sb.Append(reader.Value);
                 }
+
                 DateTime date = DateTime.Now;
 
                 Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
