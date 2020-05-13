@@ -12,15 +12,6 @@ namespace StriveFrameData.Builder
     public class XMLBuilder
     {
         /// <summary>
-        /// Create XML from generic list.
-        /// </summary>
-        /// <param name="list"></param>
-        public void CreateXMLFromGeneric(IEnumerable<object> list)
-        {
-
-        }
-
-        /// <summary>
         /// Creates XML Export file for 
         /// </summary>
         /// <param name="list"></param>
@@ -29,7 +20,13 @@ namespace StriveFrameData.Builder
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
-            // todo create xml
+            // todo finish creating all XElements 
+            // Hierarchy 
+            // 1. MainFrameData
+            //   A. UI Tab Page Name
+            //      i. Type of move i.e. StandingClose, StandingFar, Crouching groups
+            //          B. All of the UI elements that represent those types
+            //             i.e. StandingClosePunch and Crouching Kick
 
             XElement element =
                 new XElement("MainFrameData",
