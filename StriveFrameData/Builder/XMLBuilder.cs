@@ -30,12 +30,14 @@ namespace StriveFrameData.Builder
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
             // todo create xml
-            XElement element = 
-                new XElement("MainFrameDataPO", 
+
+            XElement element =
+                new XElement("MainFrameData",
                     from po in list
-                     select new XElement("StandingCloseMoves",
-                         new XElement("StandingClosePunch", po.StandingClosePunch),
-                         new XElement("StandingCloseKick", po.StandingCloseKick)));
+                    select new XElement(po.TabPageName,
+                        new XElement("StandingCloseMoves",
+                        new XElement("StandingClosePunch", po.StandingClosePunch),
+                        new XElement("StandingCloseKick", po.StandingCloseKick))));
 
             using (StreamWriter sw = new StreamWriter(
                 Environment.GetFolderPath(
