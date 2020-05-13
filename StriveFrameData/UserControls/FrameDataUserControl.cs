@@ -86,10 +86,21 @@ namespace StriveFrameData.UserControls
             p.ExportData();
         }
 
+        /// <summary>
+        /// Open External Notes button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnOpenExternalNotesForm_Click(object sender, EventArgs e)
+        {
+            ExternalAdditionalNotesView externalView = new ExternalAdditionalNotesView();
+            externalView.ShowDialog();
+        }
+
         #endregion
 
         #region Private Methods
-       
+
         /// <summary>
         /// Create MainFrameDataPO list from relevant UI elements.
         /// </summary>
@@ -202,6 +213,6 @@ namespace StriveFrameData.UserControls
             }
             return list;
         }
-#endregion
+        #endregion
     }
 }

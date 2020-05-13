@@ -22,10 +22,16 @@ namespace StriveFrameData.Presenters
     public class MainFrameDataPresenter
     {
         private readonly IMainFrameDataView _view;
+        private readonly IExternalAdditionalNotesView _externalView;
 
         public MainFrameDataPresenter(IMainFrameDataView view)
         {
             _view = view;
+        }
+
+        public MainFrameDataPresenter(IExternalAdditionalNotesView externalView)
+        {
+            _externalView = externalView;
         }
 
         /// <summary>
@@ -33,7 +39,7 @@ namespace StriveFrameData.Presenters
         /// </summary>
         public void ImportData()
         {
-
+            // todo leverage framedatausercontrol import event and import data back into view.
         }
 
         /// <summary>

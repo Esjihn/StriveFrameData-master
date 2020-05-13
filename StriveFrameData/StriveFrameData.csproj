@@ -61,7 +61,14 @@
     <Compile Include="UserControls\FrameDataUserControl.Designer.cs">
       <DependentUpon>FrameDataUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewInterfaces\IExternalAdditionalNotesView.cs" />
     <Compile Include="ViewInterfaces\IMainFrameDataView.cs" />
+    <Compile Include="Views\ExternalAdditionalNotesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExternalAdditionalNotesView.Designer.cs">
+      <DependentUpon>ExternalAdditionalNotesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainFrameDataView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="UserControls\FrameDataUserControl.resx">
       <DependentUpon>FrameDataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExternalAdditionalNotesView.resx">
+      <DependentUpon>ExternalAdditionalNotesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainFrameDataView.resx">
       <DependentUpon>MainFrameDataView.cs</DependentUpon>

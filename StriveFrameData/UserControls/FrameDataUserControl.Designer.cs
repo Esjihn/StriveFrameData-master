@@ -38,9 +38,6 @@ namespace StriveFrameData.UserControls
             this.lblAdditionalNotes = new System.Windows.Forms.Label();
             this.txtAdditionalNotes = new System.Windows.Forms.RichTextBox();
             this.lblStandingPunch = new System.Windows.Forms.Label();
-            this.btnBold = new System.Windows.Forms.Button();
-            this.btnItalic = new System.Windows.Forms.Button();
-            this.btnUnderline = new System.Windows.Forms.Button();
             this.cbxStandingPunch = new System.Windows.Forms.ComboBox();
             this.cbxStandingDust = new System.Windows.Forms.ComboBox();
             this.cbxHeavySlash = new System.Windows.Forms.ComboBox();
@@ -151,7 +148,7 @@ namespace StriveFrameData.UserControls
             // 
             // txtAdditionalNotes
             // 
-            this.txtAdditionalNotes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdditionalNotes.Font = new System.Drawing.Font("Arial", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdditionalNotes.Location = new System.Drawing.Point(56, 529);
             this.txtAdditionalNotes.Name = "txtAdditionalNotes";
             this.txtAdditionalNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -169,27 +166,6 @@ namespace StriveFrameData.UserControls
             this.lblStandingPunch.Size = new System.Drawing.Size(55, 38);
             this.lblStandingPunch.TabIndex = 28;
             this.lblStandingPunch.Text = "5P";
-            // 
-            // btnBold
-            // 
-            this.btnBold.Location = new System.Drawing.Point(0, 0);
-            this.btnBold.Name = "btnBold";
-            this.btnBold.Size = new System.Drawing.Size(75, 23);
-            this.btnBold.TabIndex = 73;
-            // 
-            // btnItalic
-            // 
-            this.btnItalic.Location = new System.Drawing.Point(0, 0);
-            this.btnItalic.Name = "btnItalic";
-            this.btnItalic.Size = new System.Drawing.Size(75, 23);
-            this.btnItalic.TabIndex = 72;
-            // 
-            // btnUnderline
-            // 
-            this.btnUnderline.Location = new System.Drawing.Point(0, 0);
-            this.btnUnderline.Name = "btnUnderline";
-            this.btnUnderline.Size = new System.Drawing.Size(75, 23);
-            this.btnUnderline.TabIndex = 71;
             // 
             // cbxStandingPunch
             // 
@@ -583,6 +559,7 @@ namespace StriveFrameData.UserControls
             this.btnOpenExternalNotesForm.TabIndex = 74;
             this.btnOpenExternalNotesForm.Text = "Open External Additional Notes Form";
             this.btnOpenExternalNotesForm.UseVisualStyleBackColor = true;
+            this.btnOpenExternalNotesForm.Click += new System.EventHandler(this.btnOpenExternalNotesForm_Click);
             // 
             // FrameDataUserControl
             // 
@@ -630,9 +607,6 @@ namespace StriveFrameData.UserControls
             this.Controls.Add(this.cbxHeavySlash);
             this.Controls.Add(this.cbxStandingDust);
             this.Controls.Add(this.cbxStandingPunch);
-            this.Controls.Add(this.btnUnderline);
-            this.Controls.Add(this.btnItalic);
-            this.Controls.Add(this.btnBold);
             this.Controls.Add(this.lblStandingPunch);
             this.Controls.Add(this.txtAdditionalNotes);
             this.Controls.Add(this.lblAdditionalNotes);
@@ -658,9 +632,6 @@ namespace StriveFrameData.UserControls
         private System.Windows.Forms.Label lblAdditionalNotes;
         private System.Windows.Forms.RichTextBox txtAdditionalNotes;
         private System.Windows.Forms.Label lblStandingPunch;
-        private System.Windows.Forms.Button btnBold;
-        private System.Windows.Forms.Button btnItalic;
-        private System.Windows.Forms.Button btnUnderline;
         private System.Windows.Forms.ComboBox cbxStandingPunch;
         private System.Windows.Forms.ComboBox cbxStandingDust;
         private System.Windows.Forms.ComboBox cbxHeavySlash;
