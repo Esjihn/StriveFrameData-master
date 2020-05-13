@@ -16,20 +16,14 @@ namespace StriveFrameData.Builder
         /// <summary>
         /// Creates export PDF file.
         /// </summary>
-        /// <param name="list"></param>
-        /// <param name="path"></param>
-        /// <param name="xmlPath"></param>
+        /// <param name="list">MainFrameDataPO list</param>
+        /// <param name="path">Path and file name for pdf file to be created</param>
+        /// <param name="xmlPath">path to xml file</param>
         public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path, string xmlPath)
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
             bool workComplete = false;
-            // Hierarchy 
-            // 1. MainFrameData (Simple parent tag name) 
-            //   A. UI Tab Page Name i.e. tabMayPage and tabSolPage
-            //      i. Type of move i.e. StandingClose, StandingFar, Crouching groups.
-            //          B. All of the UI elements that represent those types
-            //             i.e. StandingClosePunch and CrouchingKick
 
             try
             {
