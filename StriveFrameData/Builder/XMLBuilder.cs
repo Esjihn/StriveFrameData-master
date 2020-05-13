@@ -29,11 +29,8 @@ namespace StriveFrameData.Builder
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
             // todo create xml
+         
             
-            if (list is List<MainFrameDataPO>)
-            {
-                
-            }
         }
     }
 }

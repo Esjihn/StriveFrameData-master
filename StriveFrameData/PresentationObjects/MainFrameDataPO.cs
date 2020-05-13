@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace StriveFrameData.PresentationObjects
 {
     /// <summary>
     /// Presentation Objects (Properties) for data in UI Elements
     /// </summary>
+    [XmlRoot("MainFrameDataPO")]
     public class MainFrameDataPO
     {
 
@@ -16,6 +18,7 @@ namespace StriveFrameData.PresentationObjects
         /// <summary>
         /// Determines with tab page the xml was from
         /// </summary>
+        [XmlElement]
         public string TabPageName { get; set; }
         #endregion
 
