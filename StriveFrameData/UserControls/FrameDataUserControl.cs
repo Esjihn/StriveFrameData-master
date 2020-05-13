@@ -327,7 +327,6 @@ namespace StriveFrameData.UserControls
                                 }
                             }
                         }
-                            
                     }
                 }
                 list.Add(mfdPO);

@@ -39,10 +39,11 @@ namespace StriveFrameData.Presenters
             // 1. Build Export XML for import (leverage XMLBuilder)
             XMLBuilder xmlBuilder = new XMLBuilder();
             DateTime date = DateTime.Now;
-            MainFrameDataPO path = CompleteFrameDataList.First(m => m.ImportExportLocationText != string.Empty);
-            string codedPath = @"\" + date + "_FrameData.xml";
 
-            if (path != null)
+            MainFrameDataPO path = CompleteFrameDataList.FirstOrDefault(m => m.ImportExportLocationText != string.Empty);
+            string codedPath = @"\" + date.Day + "_FrameData.xml";
+
+            if (path != null && string.IsNullOrEmpty(path.ImportExportLocationText))
             {
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPath);
             }
@@ -50,7 +51,7 @@ namespace StriveFrameData.Presenters
             {
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string myPath = myDocuments + @"\" + date + "_FrameData.xml";
+                string myPath = myDocuments + @"\" + date.Day + "_FrameData.xml";
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
