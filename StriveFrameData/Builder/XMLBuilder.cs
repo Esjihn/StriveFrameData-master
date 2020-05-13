@@ -13,9 +13,9 @@ namespace StriveFrameData.Builder
     public class XMLBuilder
     {
         /// <summary>
-        /// Creates XML Export file for 
+        /// Creates XML Export file.
         /// </summary>
-        /// <param name="list"></param>
+        /// <param name="list">UI MainFrameDataPO list</param>
         /// <param name="path">file path</param>
         public void CreateXMLFromMainFrameDataPOList(List<MainFrameDataPO> list, string path)
         {

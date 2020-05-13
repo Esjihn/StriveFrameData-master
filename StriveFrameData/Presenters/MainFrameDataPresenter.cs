@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using StriveFrameData.Builder;
 using StriveFrameData.Helper;
 using StriveFrameData.Models;
@@ -27,39 +28,53 @@ namespace StriveFrameData.Presenters
             _view = view;
         }
 
-        // Setup ImportData()
+        /// <summary>
+        /// Imports XML to UI.
+        /// </summary>
         public void ImportData()
         {
 
         }
 
-        // Setup ExportData()
+        /// <summary>
+        /// Exports Data to XML and PDF file.
+        /// </summary>
         public void ExportData()
         {
             // 1. Build Export XML for import (leverage XMLBuilder)
             XMLBuilder xmlBuilder = new XMLBuilder();
-            DateTime date = DateTime.Now;
-
             MainFrameDataPO path = CompleteFrameDataList.FirstOrDefault(m => m.ImportExportLocationText != string.Empty);
-            string codedPath = @"\" + date.Day + "_FrameData.xml";
+            DateTime date = DateTime.Now;
+            
+            string fileAppendDateFormat = $"{date.Year}{date.Day}{date.Hour}{date.Minute}";
+            string codedPathXml = @"\" + fileAppendDateFormat + "_FrameData.xml";
+            string codedPathPdf = @"\" + fileAppendDateFormat + "_FrameData.pdf";
 
             if (path != null && string.IsNullOrEmpty(path.ImportExportLocationText))
             {
-                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPath);
+                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPathXml);
             }
             else
             {
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string myPath = myDocuments + @"\" + date.Day + "_FrameData.xml";
+                string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.xml";
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
             PDFBuilder pdfBuilder = new PDFBuilder();
-
-            // 3. Export file to folder (leverage FileImport)
-            FileExportHelper exportHelper = new FileExportHelper();
+            if (path != null && string.IsNullOrEmpty(path.ImportExportLocationText))
+            {
+                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPathPdf);
+            }
+            else
+            {
+                // Place into my documents folder if user hasn't set an actual folder
+                string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.pdf";
+                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, myPath);
+            }
         }
 
         /// <summary>
