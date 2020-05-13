@@ -99,13 +99,13 @@ namespace StriveFrameData.Views
         {
             List<TabPage> tabPages = new List<TabPage>
             {
-                this.tabMayPage,
                 this.tabSolPage,
                 this.tabKyPage,
-                this.tabAxlPage,
+                this.tabMayPage,
                 this.tabChippPage,
-                this.tabFaustPage,
-                this.tabPotemkinPage
+                this.tabPotemkinPage,
+                this.tabAxlPage,
+                this.tabFaustPage
             };
             TabPages = tabPages;
         }

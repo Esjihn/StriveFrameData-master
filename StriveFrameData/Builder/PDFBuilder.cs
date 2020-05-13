@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using iTextSharp.text;
-using iTextSharp.text.html;
 using iTextSharp.text.pdf;
 using StriveFrameData.PresentationObjects;
 
@@ -21,6 +18,7 @@ namespace StriveFrameData.Builder
         /// </summary>
         /// <param name="list"></param>
         /// <param name="path"></param>
+        /// <param name="xmlPath"></param>
         public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path, string xmlPath)
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
@@ -35,36 +33,45 @@ namespace StriveFrameData.Builder
 
             try
             {
-                Document Doc = new Document();
-                PdfWriter.GetInstance(Doc, new FileStream(path, FileMode.Create));
-                Doc.Open();
+                Document doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
+                doc.Open();
 
-                XmlTextReader xmlReader = new XmlTextReader(xmlPath);
+                XmlReader reader = XmlReader.Create(xmlPath);
                 
-                Chunk frameDataChunk = new Chunk();
-                
-                while (xmlReader.Read())
+                StringBuilder sb = new StringBuilder();
+                while (reader.Read())
                 {
-                    frameDataChunk = new Chunk(xmlReader.Value, FontFactory.GetFont("Arial", 11));
+                    sb.Append(reader.Name);
+                    sb.Append(reader.Value);
                 }
+                DateTime date = DateTime.Now;
 
+                Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
-                Chunk creatorChunk = new Chunk("By Matthew Miller, sysnom@gmail.com \n",
+                Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
+                    FontFactory.GetFont("Arial", 11));
+                Chunk spaceChunk = new Chunk("--------------------------------------------------------------------------" +
+                                             "--------------------------------------------------------------------", 
                     FontFactory.GetFont("Arial", 11));
 
                 Paragraph headerParagraph = new Paragraph {Alignment = Element.ALIGN_CENTER};
                 Paragraph frameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
+                Paragraph spaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
                 headerParagraph.Add(headerChunk);
                 frameDataParagraph.Add(frameDataChunk);
                 creatorParagraph.Add(creatorChunk);
+                spaceParagraph.Add(spaceChunk);
                 
-                Doc.Add(headerParagraph);
-                Doc.Add(frameDataParagraph);
-                Doc.Add(creatorParagraph);
+                doc.Add(headerParagraph);
+                doc.Add(spaceParagraph);
+                doc.Add(frameDataParagraph);
+                doc.Add(spaceParagraph);
+                doc.Add(creatorParagraph);
 
-                Doc.Close();
+                doc.Close();
 
                 workComplete = true;
             }
