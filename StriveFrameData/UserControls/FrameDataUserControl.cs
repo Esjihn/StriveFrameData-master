@@ -93,8 +93,23 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnOpenExternalNotesForm_Click(object sender, EventArgs e)
         {
-            ExternalAdditionalNotesView externalView = new ExternalAdditionalNotesView();
-            externalView.ShowDialog();
+            ExternalAdditionalNotesView externalView = new ExternalAdditionalNotesView(this.txtAdditionalNotes.Text);
+            externalView.Show();
+            externalView.VisibleChanged += FormVisibleChanged;
+        }
+
+        /// <summary>
+        /// Visible changed event for ExternalView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormVisibleChanged(object sender, EventArgs e)
+        {
+            if (sender is ExternalAdditionalNotesView externalView && !externalView.Visible)
+            {
+                this.txtAdditionalNotes.Text = externalView.ReturnAdditionalNotesText;
+                externalView.Dispose();
+            }
         }
 
         #endregion

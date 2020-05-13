@@ -14,9 +14,10 @@ namespace StriveFrameData.Views
 {
     public partial class ExternalAdditionalNotesView : Form, IExternalAdditionalNotesView
     {
-        public ExternalAdditionalNotesView()
+        public ExternalAdditionalNotesView(string additionalNotesText)
         {
             InitializeComponent();
+            this.txtExternalAdditionalNotes.Text = additionalNotesText;
         }
 
         #region Events
@@ -50,21 +51,18 @@ namespace StriveFrameData.Views
         /// <param name="e"></param>
         private void btnDock_Click(object sender, EventArgs e)
         {
-            MainFrameDataPresenter p = new MainFrameDataPresenter(this);
-
-        }
-
-        /// <summary>
-        /// External additional notes view load event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ExternalAdditionalNotesView_Load(object sender, EventArgs e)
-        {
-
+            ReturnAdditionalNotesText = this.txtExternalAdditionalNotes.Text;
+            this.Visible = false;
         }
 
         #endregion
 
+        #region Public Properties
+
+        /// <summary>
+        /// Returns modal form text back to parent form
+        /// </summary>
+        public string ReturnAdditionalNotesText { get; set; }
+        #endregion
     }
 }
