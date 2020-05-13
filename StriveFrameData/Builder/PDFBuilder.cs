@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -20,7 +21,7 @@ namespace StriveFrameData.Builder
         /// </summary>
         /// <param name="list"></param>
         /// <param name="path"></param>
-        public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path)
+        public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path, string xmlPath)
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
@@ -35,19 +36,34 @@ namespace StriveFrameData.Builder
             try
             {
                 Document Doc = new Document();
-
                 PdfWriter.GetInstance(Doc, new FileStream(path, FileMode.Create));
                 Doc.Open();
-                Chunk chunk1 = new Chunk
-                ("By Matthew Miller, sysnom@gmail.com \n",
+
+                XmlTextReader xmlReader = new XmlTextReader(xmlPath);
+                
+                Chunk frameDataChunk = new Chunk();
+                
+                while (xmlReader.Read())
+                {
+                    frameDataChunk = new Chunk(xmlReader.Value, FontFactory.GetFont("Arial", 11));
+                }
+
+                Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
+                Chunk creatorChunk = new Chunk("By Matthew Miller, sysnom@gmail.com \n",
                     FontFactory.GetFont("Arial", 11));
-                Paragraph p1 = new Paragraph {Alignment = Element.ALIGN_RIGHT};
-                p1.Add(chunk1);
-                Doc.Add(p1);
 
-                XmlTextReader xmlReader = xmlReader = new XmlTextReader(new StringReader(list[0].StandingFarPunch));
+                Paragraph headerParagraph = new Paragraph {Alignment = Element.ALIGN_CENTER};
+                Paragraph frameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
+                Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
+                
+                headerParagraph.Add(headerChunk);
+                frameDataParagraph.Add(frameDataChunk);
+                creatorParagraph.Add(creatorChunk);
+                
+                Doc.Add(headerParagraph);
+                Doc.Add(frameDataParagraph);
+                Doc.Add(creatorParagraph);
 
-                HtmlParser.Parse(Doc, xmlReader);
                 Doc.Close();
 
                 workComplete = true;

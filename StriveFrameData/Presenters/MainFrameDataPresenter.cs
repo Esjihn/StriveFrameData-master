@@ -46,7 +46,7 @@ namespace StriveFrameData.Presenters
             MainFrameDataPO path = CompleteFrameDataList.FirstOrDefault(m => m.ImportExportLocationText != string.Empty);
             DateTime date = DateTime.Now;
             
-            string fileAppendDateFormat = $"{date.Year}{date.Day}{date.Hour}{date.Minute}";
+            string fileAppendDateFormat = $"{date.Year}{date.Day}{date.Month}{date.Hour}{date.Minute}";
             string codedPathXml = @"\" + fileAppendDateFormat + "_FrameData.xml";
             string codedPathPdf = @"\" + fileAppendDateFormat + "_FrameData.pdf";
 
@@ -66,14 +66,17 @@ namespace StriveFrameData.Presenters
             PDFBuilder pdfBuilder = new PDFBuilder();
             if (path != null && string.IsNullOrEmpty(path.ImportExportLocationText))
             {
-                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPathPdf);
+                pdfBuilder.CreatePDFFromMainFrameDataPOList(
+                    CompleteFrameDataList, 
+                    path.ImportExportLocationText + codedPathPdf, 
+                    path.ImportExportLocationText + codedPathXml);
             }
             else
             {
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.pdf";
-                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, myPath);
+                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, myPath, myDocuments + codedPathXml);
             }
         }
 
