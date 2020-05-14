@@ -22,6 +22,11 @@ namespace StriveFrameData.PresentationObjects
         public string TabPageName { get; set; }
         #endregion
 
+        #region Header
+        // For use with import.
+        public string MainFrameDataXmlHeader = "MainFrameDataPO";
+
+        #endregion
         #region Standing Far Moves UI
         public string StandingFarPunch { get; set; }
         public string StandingFarKick { get; set; }

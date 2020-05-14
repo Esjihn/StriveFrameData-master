@@ -81,7 +81,6 @@ namespace StriveFrameData.UserControls
             {
                 // todo show MessageBox.Dialog error if not a valid file.
             }
-
         }
 
         /// <summary>

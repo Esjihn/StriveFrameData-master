@@ -34,17 +34,26 @@ namespace StriveFrameData.Builder
                 XmlReader reader = XmlReader.Create(xmlPath);
                 
                 StringBuilder sb = new StringBuilder();
+                MainFrameDataPO po = new MainFrameDataPO();
+
                 while (reader.Read())
                 {
                     // todo further formatting is needed for readability.
-                    
+
                     sb.Append(reader.Name);
                     sb.Append(reader.Value);
                 }
 
-                DateTime date = DateTime.Now;
+                DateTime date = DateTime.Now; 
 
+                // todo further formatting
+                // todo remove frameDataChunk Implementation
                 Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
+                // todo Dynamically create a list of chunks that parse out the entire string builder object based on a string value and edit its formatting.
+                // todo create a single paragraph to store all of those chunks
+                // todo add the modified parag
+
+
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
