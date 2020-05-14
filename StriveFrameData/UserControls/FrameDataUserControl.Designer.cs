@@ -533,16 +533,16 @@ namespace StriveFrameData.UserControls
             this.lblFileLocation.AutoSize = true;
             this.lblFileLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFileLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFileLocation.Location = new System.Drawing.Point(844, 450);
+            this.lblFileLocation.Location = new System.Drawing.Point(857, 450);
             this.lblFileLocation.Name = "lblFileLocation";
-            this.lblFileLocation.Size = new System.Drawing.Size(389, 32);
+            this.lblFileLocation.Size = new System.Drawing.Size(298, 32);
             this.lblFileLocation.TabIndex = 69;
-            this.lblFileLocation.Text = "Export/Import Folder Location";
+            this.lblFileLocation.Text = "Export Folder Location";
             // 
             // btnFolderBrowse
             // 
             this.btnFolderBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFolderBrowse.Location = new System.Drawing.Point(1230, 445);
+            this.btnFolderBrowse.Location = new System.Drawing.Point(1216, 445);
             this.btnFolderBrowse.Name = "btnFolderBrowse";
             this.btnFolderBrowse.Size = new System.Drawing.Size(62, 44);
             this.btnFolderBrowse.TabIndex = 70;
@@ -616,7 +616,7 @@ namespace StriveFrameData.UserControls
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
             this.Name = "FrameDataUserControl";
-            this.Size = new System.Drawing.Size(1295, 723);
+            this.Size = new System.Drawing.Size(1292, 723);
             this.ResumeLayout(false);
             this.PerformLayout();
 

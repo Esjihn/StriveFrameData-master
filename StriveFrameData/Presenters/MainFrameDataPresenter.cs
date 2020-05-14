@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StriveFrameData.Builder;
-using StriveFrameData.Helper;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
@@ -154,5 +153,13 @@ namespace StriveFrameData.Presenters
             CompleteFrameDataList = list;
         }
 
+        /// <summary>
+        /// Extracts all MainFrameDataPO from XML and stores in a list. 
+        /// </summary>
+        /// <param name="xmlImportList"></param>
+        internal void ExtractMainFrameDataListFromXMLImport(List<MainFrameDataPO> xmlImportList)
+        {
+            // todo do work 
+        }
     }
 }

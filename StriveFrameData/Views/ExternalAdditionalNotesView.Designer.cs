@@ -78,8 +78,7 @@ namespace StriveFrameData.Views
             this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExternalAdditionalNotesView";
-            this.Text = "ExternalAdditionalNotesView";
-            this.Load += new System.EventHandler(this.ExternalAdditionalNotesView_Load);
+            this.Text = "External Additional Notes";
             this.ResumeLayout(false);
 
         }

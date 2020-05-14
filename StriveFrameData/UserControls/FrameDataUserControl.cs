@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using StriveFrameData.Helper;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
 using StriveFrameData.Views;
@@ -67,10 +68,20 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnImport_Click(object sender, EventArgs e)
         {
-            // todo check if a file exists to import if nothing exists then return;
+            // todo open dialog to allow user to select file for import
+            // todo check if selected xml is valid by looking for <MainFrameData> tag. 
+            FileImportHelper fih = new FileImportHelper();
+            if (fih.DetermineIfSelectedXmlIsValid())
+            {
+                MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
+                p.ExtractMainFrameDataListFromXMLImport(XMLImportList());
+                p.ImportData();
+            }
+            else
+            {
+                // todo show MessageBox.Dialog error if not a valid file.
+            }
 
-            // todo leverage FileImportHelper to check for an read xml file into a list<MainFrameDataPO>
-            // The presenter will call view method to process import into actual ui elements
         }
 
         /// <summary>
@@ -115,6 +126,16 @@ namespace StriveFrameData.UserControls
         #endregion
 
         #region Private Methods
+
+        /// <summary>
+        /// Create MainFrameDataPO list from XML Import file. 
+        /// </summary>
+        /// <returns></returns>
+        private List<MainFrameDataPO> XMLImportList()
+        {
+            // todo do work. 
+            return null;
+        }
 
         /// <summary>
         /// Create MainFrameDataPO list from relevant UI elements.
