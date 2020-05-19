@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using StriveFrameData.Helper;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
@@ -147,24 +149,39 @@ namespace StriveFrameData.UserControls
 
             List<MainFrameDataPO> importList = new List<MainFrameDataPO>();
 
-            using (StreamReader sr = new StreamReader(fileNameAndPath))
-            {
-                string line;
-                while (!string.IsNullOrEmpty(line = sr.ReadLine()))
-                {
-                    switch (line)
-                    {
-                        case "":
-                            break;
-                        default:
-                            break;
-                    }
+            XDocument doc = XDocument.Load(fileNameAndPath);
 
-                }
+            try
+            {
+                XElement tabSolPageElement = doc.Element("MainFrameData").Element("tabSolPage");
+                IEnumerable<XElement> solStandingFarMoves = tabSolPageElement.Descendants("StandingFarMoves");
+                IEnumerable<XElement> solStandingCloseMoves = tabSolPageElement.Descendants("StandingCloseMoves");
+                IEnumerable<XElement> solCrouchingMoves = tabSolPageElement.Descendants("CrouchingMoves");
+                IEnumerable<XElement> solAdditionalNotes = tabSolPageElement.Descendants("AdditionalNotes");
+
+
+
+
+
+
+
+
+
+
+                // Current program logic ensures all pages have the same importExportLocation regardless which page
+                // the import location is selected on.
+                IEnumerable<XElement> ImportExportLocations = tabSolPageElement.Descendants("ImportExportLocations");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($@"Unable to Import file. Error: {e}", @"Import File Error");
+
+                return new List<MainFrameDataPO>();
             }
 
-
-            return null;
+            MessageBox.Show(@"Import Successful!", @"Success");
+     
+            return importList;
         }
 
         /// <summary>
