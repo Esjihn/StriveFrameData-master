@@ -27,6 +27,7 @@ namespace StriveFrameData.PresentationObjects
         public string MainFrameDataXmlHeader = "MainFrameDataPO";
 
         #endregion
+
         #region Standing Far Moves UI
         public string StandingFarPunch { get; set; }
         public string StandingFarKick { get; set; }

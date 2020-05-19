@@ -68,18 +68,29 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnImport_Click(object sender, EventArgs e)
         {
-            // todo open dialog to allow user to select file for import
-            // todo check if selected xml is valid by looking for <MainFrameData> tag. 
-            FileImportHelper fih = new FileImportHelper();
-            if (fih.DetermineIfSelectedXmlIsValid())
+            if (fileBrowserDialog != null)
             {
-                MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
-                p.ExtractMainFrameDataListFromXMLImport(XMLImportList());
-                p.ImportData();
-            }
-            else
-            {
-                // todo show MessageBox.Dialog error if not a valid file.
+                fileBrowserDialog.CheckFileExists = true;
+                fileBrowserDialog.Filter = @"xml files (*.xml)|*.xml";
+
+                if (this.fileBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileNameAndPath = fileBrowserDialog.FileName;
+
+                    FileImportHelper fih = new FileImportHelper();
+                    if (fih.DetermineIfSelectedXmlIsValid(fileNameAndPath))
+                    {
+                        MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
+                        p.ExtractMainFrameDataListFromXMLImport(XMLImportList());
+                        p.ImportData();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            @"Selected file is not compatible for import", @"File Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 

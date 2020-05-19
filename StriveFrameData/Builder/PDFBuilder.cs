@@ -51,7 +51,7 @@ namespace StriveFrameData.Builder
                 Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
                 // todo Dynamically create a list of chunks that parse out the entire string builder object based on a string value and edit its formatting.
                 // todo create a single paragraph to store all of those chunks
-                // todo add the modified parag
+                // todo add the modified paragraph to doc. 
 
 
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));

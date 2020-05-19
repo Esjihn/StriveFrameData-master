@@ -78,6 +78,7 @@ namespace StriveFrameData.UserControls
             this.lblFileLocation = new System.Windows.Forms.Label();
             this.btnFolderBrowse = new System.Windows.Forms.Button();
             this.btnOpenExternalNotesForm = new System.Windows.Forms.Button();
+            this.fileBrowserDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // btnImport
@@ -672,5 +673,6 @@ namespace StriveFrameData.UserControls
         private System.Windows.Forms.Label lblFileLocation;
         private System.Windows.Forms.Button btnFolderBrowse;
         private System.Windows.Forms.Button btnOpenExternalNotesForm;
+        private System.Windows.Forms.OpenFileDialog fileBrowserDialog;
     }
 }
