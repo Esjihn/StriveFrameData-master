@@ -63,7 +63,7 @@ namespace StriveFrameData.Views
             this.txtExternalAdditionalNotes.Location = new System.Drawing.Point(12, 78);
             this.txtExternalAdditionalNotes.Name = "txtExternalAdditionalNotes";
             this.txtExternalAdditionalNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtExternalAdditionalNotes.Size = new System.Drawing.Size(987, 1372);
+            this.txtExternalAdditionalNotes.Size = new System.Drawing.Size(987, 1099);
             this.txtExternalAdditionalNotes.TabIndex = 1;
             this.txtExternalAdditionalNotes.Text = "";
             // 
@@ -71,7 +71,7 @@ namespace StriveFrameData.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 1501);
+            this.ClientSize = new System.Drawing.Size(1026, 1293);
             this.ControlBox = false;
             this.Controls.Add(this.txtExternalAdditionalNotes);
             this.Controls.Add(this.btnDock);

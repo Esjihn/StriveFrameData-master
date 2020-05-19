@@ -36,9 +36,12 @@ namespace StriveFrameData.Presenters
         /// <summary>
         /// Imports XML to UI.
         /// </summary>
-        public void ImportData()
+        /// <param name="xmlImportList"></param>
+        public void ImportData(List<MainFrameDataPO> xmlImportList)
         {
             // todo leverage framedatausercontrol import event and import data back into view.
+            if (xmlImportList == null || xmlImportList.Count == 0) return;
+
         }
 
         /// <summary>
@@ -151,15 +154,6 @@ namespace StriveFrameData.Presenters
             if (list == null || list.Count == 0) return;
 
             CompleteFrameDataList = list;
-        }
-
-        /// <summary>
-        /// Extracts all MainFrameDataPO from XML and stores in a list. 
-        /// </summary>
-        /// <param name="xmlImportList"></param>
-        internal void ExtractMainFrameDataListFromXMLImport(List<MainFrameDataPO> xmlImportList)
-        {
-            // todo do work 
         }
     }
 }

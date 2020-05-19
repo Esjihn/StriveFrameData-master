@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using StriveFrameData.Helper;
 using StriveFrameData.PresentationObjects;
@@ -70,7 +71,6 @@ namespace StriveFrameData.UserControls
         {
             if (fileBrowserDialog != null)
             {
-                fileBrowserDialog.CheckFileExists = true;
                 fileBrowserDialog.Filter = @"xml files (*.xml)|*.xml";
 
                 if (this.fileBrowserDialog.ShowDialog() == DialogResult.OK)
@@ -81,13 +81,12 @@ namespace StriveFrameData.UserControls
                     if (fih.DetermineIfSelectedXmlIsValid(fileNameAndPath))
                     {
                         MainFrameDataPresenter p = new MainFrameDataPresenter(this.Parent.Parent as MainFrameDataView);
-                        p.ExtractMainFrameDataListFromXMLImport(XMLImportList());
-                        p.ImportData();
+                        p.ImportData(XMLImportList(fileNameAndPath));
                     }
                     else
                     {
                         MessageBox.Show(
-                            @"Selected file is not compatible for import", @"File Error",
+                            @"The selected file is not compatible for import. *.xml files only.", @"File Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -140,10 +139,31 @@ namespace StriveFrameData.UserControls
         /// <summary>
         /// Create MainFrameDataPO list from XML Import file. 
         /// </summary>
+        /// <param name="fileNameAndPath"></param>
         /// <returns></returns>
-        private List<MainFrameDataPO> XMLImportList()
+        private List<MainFrameDataPO> XMLImportList(string fileNameAndPath)
         {
-            // todo do work. 
+            if (string.IsNullOrEmpty(fileNameAndPath)) return new List<MainFrameDataPO>();
+
+            List<MainFrameDataPO> importList = new List<MainFrameDataPO>();
+
+            using (StreamReader sr = new StreamReader(fileNameAndPath))
+            {
+                string line;
+                while (!string.IsNullOrEmpty(line = sr.ReadLine()))
+                {
+                    switch (line)
+                    {
+                        case "":
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+
+
             return null;
         }
 
