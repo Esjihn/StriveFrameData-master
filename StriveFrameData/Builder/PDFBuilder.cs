@@ -32,9 +32,20 @@ namespace StriveFrameData.Builder
                 doc.Open();
 
                 // TODO I already have the list of UI elements as list parameter. Iterate over them and add proper formatting. 
-                
+                StringBuilder sb = new StringBuilder();
+                foreach (MainFrameDataPO item in list)
+                {
+                    sb.Append(item.TabPageName)
+                        .Append(item.ImportExportLocationText)
+                        .Append(item.StandingFarPunch)
+                        .Append(item.StandingClosePunch)
+                        .Append(item.CrouchingDust);
+                }
+
 
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
+                Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial, 11"));
+
                 DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
@@ -48,6 +59,7 @@ namespace StriveFrameData.Builder
                 Paragraph spaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
                 headerParagraph.Add(headerChunk);
+                frameDataParagraph.Add(frameDataChunk);
                 creatorParagraph.Add(creatorChunk);
                 spaceParagraph.Add(spaceChunk);
                 
