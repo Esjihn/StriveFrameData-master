@@ -31,31 +31,11 @@ namespace StriveFrameData.Builder
                 PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
                 doc.Open();
 
-                XmlReader reader = XmlReader.Create(xmlPath);
+                // TODO I already have the list of UI elements as list parameter. Iterate over them and add proper formatting. 
                 
-                StringBuilder sb = new StringBuilder();
-                MainFrameDataPO po = new MainFrameDataPO();
-                
-                // todo 5/19/2020 I think the best way to solve this is to copy the logic from the import.
-                // We can create an XDocument and then pull values from IEnumerable XElements and format them at the same time for the export.
-
-                while (reader.Read())
-                {
-                    // todo further formatting is needed for readability.
-
-                    sb.Append(reader.Name);
-                    sb.Append(reader.Value);
-                }
-
-                DateTime date = DateTime.Now; 
-
-                // todo remove frameDataChunk Implementation
-                Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
-                // todo create a single paragraph to store all of those chunks
-                // todo add the modified paragraph to doc. 
-
 
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
+                DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
                 Chunk spaceChunk = new Chunk("--------------------------------------------------------------------------" +
@@ -68,7 +48,6 @@ namespace StriveFrameData.Builder
                 Paragraph spaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
                 headerParagraph.Add(headerChunk);
-                frameDataParagraph.Add(frameDataChunk);
                 creatorParagraph.Add(creatorChunk);
                 spaceParagraph.Add(spaceChunk);
                 
