@@ -39,9 +39,112 @@ namespace StriveFrameData.Presenters
         /// <param name="xmlImportList"></param>
         public void ImportData(List<MainFrameDataPO> xmlImportList)
         {
-            // todo leverage framedatausercontrol import event and import data back into view.
             if (xmlImportList == null || xmlImportList.Count == 0) return;
 
+            // Tab pages
+            for (int i = 0; i < MainFrameDataView.TabPages.Count; i++)
+            {
+                // Iterate over import list 1 to 1 with tabPages. 
+                MainFrameDataPO mfdPO = xmlImportList[i];
+                
+                // User controls inside tab page
+                for (int j = 0; j < MainFrameDataView.TabPages[i].Controls.Count; j++)
+                {
+                    // User control controlCollection
+                    for (int k = 0; k < MainFrameDataView.TabPages[i].Controls[j].Controls.Count; k++)
+                    {
+                        // Fill all combo boxes
+                        if (MainFrameDataView.TabPages[i].Controls[j].Controls[k] is ComboBox)
+                        {
+                            ComboBox comboBoxControl = MainFrameDataView.TabPages[i].Controls[j].Controls[k] as ComboBox;
+
+                            if (comboBoxControl != null)
+                            {
+                                switch (comboBoxControl.Name)
+                                {
+                                    // Standing far
+                                    case "cbxStandingPunch":
+                                        comboBoxControl.Text = mfdPO.StandingFarPunch;
+                                        break;
+                                    case "cbxStandingKick":
+                                        comboBoxControl.Text = mfdPO.StandingFarKick;
+                                        break;
+                                    case "cbxStandingSlash":
+                                         comboBoxControl.Text = mfdPO.StandingFarSlash;
+                                        break;
+                                    case "cbxHeavySlash":
+                                         comboBoxControl.Text = mfdPO.StandingFarHeavySlash;
+                                        break;
+                                    case "cbxStandingDust":
+                                        comboBoxControl.Text = mfdPO.StandingFarDust;
+                                        break;
+                                    case "cbxStandingNA":
+                                        comboBoxControl.Text = mfdPO.StandingFarNotApplicable;
+                                        break;
+                                    // Standing close
+                                    case "cbxStandingClosePunch":
+                                        comboBoxControl.Text = mfdPO.StandingClosePunch;
+                                        break;
+                                    case "cbxStandingCloseKick":
+                                        comboBoxControl.Text = mfdPO.StandingCloseKick;
+                                        break;
+                                    case "cbxStandingCloseSlash":
+                                        comboBoxControl.Text = mfdPO.StandingCloseSlash;
+                                        break;
+                                    case "cbxStandingCloseHeavySlash":
+                                        comboBoxControl.Text = mfdPO.StandingCloseHeavySlash;
+                                        break;
+                                    case "cbxStandingCloseDust":
+                                        comboBoxControl.Text = mfdPO.StandingCloseDust;
+                                        break;
+                                    case "cbxStandingCloseNotApplicable":
+                                        comboBoxControl.Text = mfdPO.StandingCloseNotApplicable;
+                                        break;
+                                    // Crouching
+                                    case "cbxCrouchingPunch":
+                                        comboBoxControl.Text = mfdPO.CrouchingPunch;
+                                        break;
+                                    case "cbxCrouchKick":
+                                        comboBoxControl.Text = mfdPO.CrouchingKick;
+                                        break;
+                                    case "cbxCrouchSlash":
+                                        comboBoxControl.Text = mfdPO.CrouchingSlash;
+                                        break;
+                                    case "cbxCrouchHeavySlash":
+                                        comboBoxControl.Text = mfdPO.CrouchingHeavySlash;
+                                        break;
+                                    case "cbxCrouchingDust":
+                                        comboBoxControl.Text = mfdPO.CrouchingDust;
+                                        break;
+                                    case "cbxCrouchingNotApplicable":
+                                        comboBoxControl.Text = mfdPO.CrouchingNotApplicable;
+                                        break;
+                                }
+                            }
+                        }
+
+                        if (MainFrameDataView.TabPages[i].Controls[j].Controls[k] is RichTextBox)
+                        {
+                            RichTextBox richTextBoxControl = MainFrameDataView.TabPages[i].Controls[j].Controls[k] as RichTextBox;
+
+                            if (richTextBoxControl != null)
+                            {
+                                if (richTextBoxControl.Name == "txtAdditionalNotes")
+                                {
+                                    richTextBoxControl.Text = mfdPO.AdditionalNotesTextBoxText;
+                                }
+
+                                // Ensure we do not trigger export text changed event. Once we import one value into export text box
+                                // the application will automatically fill out the rest via event in the view. 
+                                if (richTextBoxControl.Name == "txtImportExportFileLocation" && string.IsNullOrEmpty(richTextBoxControl.Text))
+                                {
+                                    richTextBoxControl.Text = mfdPO.ImportExportLocationText;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
