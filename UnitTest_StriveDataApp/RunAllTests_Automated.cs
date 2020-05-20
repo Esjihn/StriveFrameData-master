@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitTest_StriveDataApp
 {
-    class RunAllTests
+    public class RunAllTestsAutomated
     {
     }
 }

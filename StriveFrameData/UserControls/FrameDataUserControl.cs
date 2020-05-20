@@ -152,7 +152,8 @@ namespace StriveFrameData.UserControls
             List<MainFrameDataPO> importList = new List<MainFrameDataPO>();
 
             XDocument doc = XDocument.Load(fileNameAndPath);
-
+            
+            // TODO parse Element values into list. 
             try
             {
                 // tabSolPage

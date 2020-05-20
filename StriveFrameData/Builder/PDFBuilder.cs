@@ -49,10 +49,8 @@ namespace StriveFrameData.Builder
 
                 DateTime date = DateTime.Now; 
 
-                // todo further formatting
                 // todo remove frameDataChunk Implementation
                 Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial", 11));
-                // todo Dynamically create a list of chunks that parse out the entire string builder object based on a string value and edit its formatting.
                 // todo create a single paragraph to store all of those chunks
                 // todo add the modified paragraph to doc. 
 
