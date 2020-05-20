@@ -35,6 +35,9 @@ namespace StriveFrameData.Builder
                 
                 StringBuilder sb = new StringBuilder();
                 MainFrameDataPO po = new MainFrameDataPO();
+                
+                // todo 5/19/2020 I think the best way to solve this is to copy the logic from the import.
+                // We can create an XDocument and then pull values from IEnumerable XElements and format them at the same time for the export.
 
                 while (reader.Read())
                 {

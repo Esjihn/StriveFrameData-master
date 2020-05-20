@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using StriveFrameData.Constants;
 using StriveFrameData.Helper;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
@@ -153,24 +155,101 @@ namespace StriveFrameData.UserControls
 
             try
             {
-                XElement tabSolPageElement = doc.Element("MainFrameData").Element("tabSolPage");
-                IEnumerable<XElement> solStandingFarMoves = tabSolPageElement.Descendants("StandingFarMoves");
-                IEnumerable<XElement> solStandingCloseMoves = tabSolPageElement.Descendants("StandingCloseMoves");
-                IEnumerable<XElement> solCrouchingMoves = tabSolPageElement.Descendants("CrouchingMoves");
-                IEnumerable<XElement> solAdditionalNotes = tabSolPageElement.Descendants("AdditionalNotes");
+                // tabSolPage
+                XElement tabSolPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabSolPage);
 
+                IEnumerable<XElement> solStandingFarMoves 
+                    = tabSolPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> solStandingCloseMoves 
+                    = tabSolPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> solCrouchingMoves 
+                    = tabSolPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> solAdditionalNotes 
+                    = tabSolPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
 
+                // tabKyPage
+                XElement tabKyPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabKyPage);
 
+                IEnumerable<XElement> kyStandingFarMoves
+                    = tabKyPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> kyStandingCloseMoves
+                    = tabKyPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> kyCrouchingMoves
+                    = tabKyPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> kyAdditionalNotes
+                    = tabKyPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+                
+                // tabMayPage
+                XElement tabMayPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabMayPage);
 
+                IEnumerable<XElement> mayStandingFarMoves
+                    = tabMayPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> mayStandingCloseMoves
+                    = tabMayPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> mayCrouchingMoves
+                    = tabMayPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> mayAdditionalNotes
+                    = tabMayPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
 
+                // tabChippPage
+                XElement tabChippPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabChippPage);
 
+                IEnumerable<XElement> chippStandingFarMoves
+                    = tabChippPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> chippStandingCloseMoves
+                    = tabChippPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> chippCrouchingMoves
+                    = tabChippPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> chippAdditionalNotes
+                    = tabChippPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
 
+                // tabPotemkinPage
+                XElement tabPotemkinPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabPotemkinPage);
 
+                IEnumerable<XElement> potStandingFarMoves
+                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> potStandingCloseMoves
+                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> potCrouchingMoves
+                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> potAdditionalNotes
+                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
 
+                // tabAxlPage
+                XElement tabAxlPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabAxlPage);
+
+                IEnumerable<XElement> axlStandingFarMoves
+                    = tabAxlPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> axlStandingCloseMoves
+                    = tabAxlPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> axlCrouchingMoves
+                    = tabAxlPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> axlAdditionalNotes
+                    = tabAxlPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+
+                // tabFaustPage
+                XElement tabFaustPageElement = doc.Element(StriveXMLConstants.MainFrameData)
+                    .Element(StriveXMLConstants.tabFaustPage);
+
+                IEnumerable<XElement> faustStandingFarMoves
+                    = tabFaustPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
+                IEnumerable<XElement> faustStandingCloseMoves
+                    = tabFaustPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
+                IEnumerable<XElement> faustCrouchingMoves
+                    = tabFaustPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
+                IEnumerable<XElement> faustAdditionalNotes
+                    = tabFaustPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
 
                 // Current program logic ensures all pages have the same importExportLocation regardless which page
                 // the import location is selected on.
-                IEnumerable<XElement> ImportExportLocations = tabSolPageElement.Descendants("ImportExportLocations");
+                IEnumerable<XElement> ImportExportLocations 
+                    = tabSolPageElement.Descendants(StriveXMLConstants.ImportExportLocations);
             }
             catch (Exception e)
             {
