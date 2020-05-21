@@ -80,7 +80,6 @@ namespace StriveFrameData.Builder
                 }
 
                 // Ky
-                // TODO 
                 Chunk kyHeaderChunk = new Chunk();
                 Chunk kyFrameDataChunk = new Chunk();
                 MainFrameDataPO kyPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabKyPage);
@@ -138,43 +137,55 @@ namespace StriveFrameData.Builder
                 
 
                 Paragraph headerParagraph = new Paragraph {Alignment = Element.ALIGN_CENTER};
+
                 Paragraph solHeaderParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph solFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph kyHeaderParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph kyFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
+
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
+
                 Paragraph lineParagaph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 Paragraph singleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 Paragraph doubleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
+                // Header
                 headerParagraph.Add(headerChunk);
+
+                // Sol
                 solHeaderParagraph.Add(solHeaderChunk);
                 solFrameDataParagraph.Add(solFrameDataChunk);
+                
+                // Ky
                 kyHeaderParagraph.Add(kyHeaderChunk);
                 kyFrameDataParagraph.Add(kyFrameDataChunk);
+                
+                // Dev 
                 creatorParagraph.Add(creatorChunk);
-                lineParagaph.Add(linkChunk);
+                
+                // Formatting
                 singleSpaceParagraph.Add(singleSpaceChunk);
                 doubleSpaceParagraph.Add(doubleSpaceChunk);
-                
-                // Header
+                lineParagaph.Add(linkChunk);
+
+                // Header doc
                 doc.Add(headerParagraph);
                 doc.Add(lineParagaph);
                 doc.Add(singleSpaceParagraph);
                 
-                // Sol
+                // Sol doc
                 doc.Add(solHeaderParagraph);
                 doc.Add(singleSpaceParagraph);
                 doc.Add(solFrameDataParagraph);
                 doc.Add(singleSpaceParagraph);
 
-                // Ky
+                // Ky doc
                 doc.Add(kyHeaderParagraph);
                 doc.Add(singleSpaceParagraph);
                 doc.Add(kyFrameDataParagraph);
                 doc.Add(singleSpaceParagraph);
 
-                // Footer
+                // Footer doc
                 doc.Add(lineParagaph);
                 doc.Add(creatorParagraph);
 
