@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using StriveFrameData.Constants;
@@ -157,100 +158,108 @@ namespace StriveFrameData.UserControls
             try
             {
                 // tabSolPage
+                MainFrameDataPO solPo = new MainFrameDataPO();
+
                 XElement tabSolPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabSolPage);
 
-                IEnumerable<XElement> solStandingFarMoves 
-                    = tabSolPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> solStandingCloseMoves 
-                    = tabSolPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> solCrouchingMoves 
-                    = tabSolPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> solAdditionalNotes 
-                    = tabSolPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+                // Standing far Moves
+                solPo.StandingFarPunch = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                solPo.StandingFarKick = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                solPo.StandingFarSlash = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                solPo.StandingFarHeavySlash = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                solPo.StandingFarDust = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                solPo.StandingFarNotApplicable = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+
+                // Crouching moves
+
+                solPo.AdditionalNotesTextBoxText = tabSolPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
+
+                // Event will fire to fill the remaining pos with ImportExportLocationText in the UI.
+                solPo.ImportExportLocationText = tabSolPageElement
+                    .Element(StriveXMLConstants.ImportExportLocations)
+                    .Element(StriveXMLConstants.ImportExportLocation)
+                    .Value;
+
+                importList.Add(solPo);
 
                 // tabKyPage
+                MainFrameDataPO kyPo = new MainFrameDataPO();
+
                 XElement tabKyPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabKyPage);
 
-                IEnumerable<XElement> kyStandingFarMoves
-                    = tabKyPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> kyStandingCloseMoves
-                    = tabKyPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> kyCrouchingMoves
-                    = tabKyPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> kyAdditionalNotes
-                    = tabKyPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
                 
+
+                importList.Add(kyPo);
+
                 // tabMayPage
+                MainFrameDataPO mayPo = new MainFrameDataPO();
+
                 XElement tabMayPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabMayPage);
 
-                IEnumerable<XElement> mayStandingFarMoves
-                    = tabMayPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> mayStandingCloseMoves
-                    = tabMayPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> mayCrouchingMoves
-                    = tabMayPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> mayAdditionalNotes
-                    = tabMayPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+                importList.Add(mayPo);
 
                 // tabChippPage
+                MainFrameDataPO chippPo = new MainFrameDataPO();
+
                 XElement tabChippPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabChippPage);
 
-                IEnumerable<XElement> chippStandingFarMoves
-                    = tabChippPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> chippStandingCloseMoves
-                    = tabChippPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> chippCrouchingMoves
-                    = tabChippPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> chippAdditionalNotes
-                    = tabChippPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+                importList.Add(chippPo);
 
                 // tabPotemkinPage
+                MainFrameDataPO potPo = new MainFrameDataPO();
+
                 XElement tabPotemkinPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabPotemkinPage);
 
-                IEnumerable<XElement> potStandingFarMoves
-                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> potStandingCloseMoves
-                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> potCrouchingMoves
-                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> potAdditionalNotes
-                    = tabPotemkinPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+;               importList.Add(potPo);
 
                 // tabAxlPage
+                MainFrameDataPO axlPo = new MainFrameDataPO();
+
                 XElement tabAxlPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabAxlPage);
 
-                IEnumerable<XElement> axlStandingFarMoves
-                    = tabAxlPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> axlStandingCloseMoves
-                    = tabAxlPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> axlCrouchingMoves
-                    = tabAxlPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> axlAdditionalNotes
-                    = tabAxlPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
+                importList.Add(axlPo);
 
                 // tabFaustPage
+                MainFrameDataPO faustPo = new MainFrameDataPO();
+
                 XElement tabFaustPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabFaustPage);
 
-                IEnumerable<XElement> faustStandingFarMoves
-                    = tabFaustPageElement.Descendants(StriveXMLConstants.StandingFarMoves);
-                IEnumerable<XElement> faustStandingCloseMoves
-                    = tabFaustPageElement.Descendants(StriveXMLConstants.StandingCloseMoves);
-                IEnumerable<XElement> faustCrouchingMoves
-                    = tabFaustPageElement.Descendants(StriveXMLConstants.CrouchingMoves);
-                IEnumerable<XElement> faustAdditionalNotes
-                    = tabFaustPageElement.Descendants(StriveXMLConstants.AdditionalNotes);
-
-                // Current program logic ensures all pages have the same importExportLocation regardless which page
-                // the import location is selected on.
-                IEnumerable<XElement> ImportExportLocations 
-                    = tabSolPageElement.Descendants(StriveXMLConstants.ImportExportLocations);
+                importList.Add(faustPo);
             }
             catch (Exception e)
             {
