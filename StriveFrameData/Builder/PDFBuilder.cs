@@ -50,24 +50,32 @@ namespace StriveFrameData.Builder
 
                     string solFrameData
                         // Standing Far Moves
-                        = StriveXMLConstants.StandingFarMoves
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarPunch + ": " + solPo.StandingFarPunch
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarKick + ": " + solPo.StandingFarKick
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarSlash + ": " + solPo.StandingFarSlash
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarHeavySlash + ": " + solPo.StandingFarHeavySlash
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarDust + ": " + solPo.StandingFarDust
-                          + Environment.NewLine
-                          + StriveXMLConstants.StandingFarNotApplicable + ": " + solPo.StandingFarNotApplicable
-                          + Environment.NewLine
-                          // Standing Close Moves
-                          + StriveXMLConstants.StandingFarMoves
-                          + Environment.NewLine;
-
+                        = StriveXMLConstants.StandingFarMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingFarPunch + ": " + solPo.StandingFarPunch + Environment.NewLine
+                            + StriveXMLConstants.StandingFarKick + ": " + solPo.StandingFarKick + Environment.NewLine
+                            + StriveXMLConstants.StandingFarSlash + ": " + solPo.StandingFarSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarHeavySlash + ": " + solPo.StandingFarHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarDust + ": " + solPo.StandingFarDust + Environment.NewLine
+                            + StriveXMLConstants.StandingFarNotApplicable + ": " + solPo.StandingFarNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Standing Close Moves
+                            + StriveXMLConstants.StandingCloseMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingClosePunch + ": " + solPo.StandingClosePunch + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseKick + ": " + solPo.StandingCloseKick + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseSlash + ": " + solPo.StandingCloseSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseHeavySlash + ": " + solPo.StandingCloseHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseDust + ": " + solPo.StandingCloseDust + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseNotApplicable + ": " + solPo.StandingCloseNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Crouching Moves
+                            + StriveXMLConstants.CrouchingMoves + Environment.NewLine
+                            + StriveXMLConstants.CrouchingPunch + ": " + solPo.CrouchingPunch + Environment.NewLine
+                            + StriveXMLConstants.CrouchingKick + ": " + solPo.CrouchingKick + Environment.NewLine
+                            + StriveXMLConstants.CrouchingSlash + ": " + solPo.CrouchingSlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingHeavySlash + ": " + solPo.CrouchingHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingDust + ": " + solPo.CrouchingDust + Environment.NewLine
+                            + StriveXMLConstants.CrouchingNotApplicable + ": " + solPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Additional Notes
+                            + StriveXMLConstants.AdditionalNotes + Environment.NewLine
+                            + StriveXMLConstants.AdditionalNote + ": " + solPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
                     solFrameDataChunk = new Chunk(solFrameData, FontFactory.GetFont("Arial", 11));
                 }
