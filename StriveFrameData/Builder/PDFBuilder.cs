@@ -18,8 +18,7 @@ namespace StriveFrameData.Builder
         /// </summary>
         /// <param name="list">MainFrameDataPO list</param>
         /// <param name="path">Path and file name for pdf file to be created</param>
-        /// <param name="xmlPath">path to xml file</param>
-        public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path, string xmlPath)
+        public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path)
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
@@ -31,15 +30,15 @@ namespace StriveFrameData.Builder
                 PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
                 doc.Open();
 
-                // TODO I already have the list of UI elements as list parameter. Iterate over them and add proper formatting. 
+                // TODO I already have the list of UI elements as list parameter. Iterate over them and add proper formatting.
+
                 StringBuilder sb = new StringBuilder();
                 foreach (MainFrameDataPO item in list)
                 {
-                    sb.Append(item.TabPageName)
-                        .Append(item.ImportExportLocationText)
-                        .Append(item.StandingFarPunch)
-                        .Append(item.StandingClosePunch)
-                        .Append(item.CrouchingDust);
+                    
+
+
+
                 }
 
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));

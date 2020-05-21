@@ -154,7 +154,6 @@ namespace StriveFrameData.UserControls
 
             XDocument doc = XDocument.Load(fileNameAndPath);
             
-            // TODO parse Element values into list. 
             try
             {
                 // tabSolPage
