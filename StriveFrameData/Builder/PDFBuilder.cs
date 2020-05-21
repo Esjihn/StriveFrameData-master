@@ -42,7 +42,6 @@ namespace StriveFrameData.Builder
                         .Append(item.CrouchingDust);
                 }
 
-
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
                 Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial, 11"));
 

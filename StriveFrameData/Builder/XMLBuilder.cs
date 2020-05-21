@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using StriveFrameData.Constants;
 using StriveFrameData.PresentationObjects;
 
 namespace StriveFrameData.Builder
@@ -32,33 +33,34 @@ namespace StriveFrameData.Builder
                 //             i.e. StandingClosePunch and CrouchingKick
 
                 XElement element =
-                    new XElement("MainFrameData",
+                    new XElement(StriveXMLConstants.MainFrameData,
                         from po in list
                         select new XElement(po.TabPageName,
-                            new XElement("StandingFarMoves",
-                                new XElement("StandingFarPunch", po.StandingFarPunch),
-                                new XElement("StandingFarKick", po.StandingFarKick),
-                                new XElement("StandingFarSlash", po.StandingFarSlash),
-                                new XElement("StandingFarHeavySlash", po.StandingFarHeavySlash),
-                                new XElement("StandingFarDust", po.StandingFarDust),
-                                new XElement("StandingFarNotApplicable", po.StandingFarNotApplicable)),
-                            new XElement("StandingCloseMoves",
-                                new XElement("StandingClosePunch", po.StandingClosePunch),
-                                new XElement("StandingCloseKick", po.StandingCloseKick),
-                                new XElement("StandingCloseSlash", po.StandingCloseSlash),
-                                new XElement("StandingCloseHeavySlash", po.StandingCloseHeavySlash),
-                                new XElement("StandingCloseDust", po.StandingCloseDust),
-                                new XElement("StandingCloseNotApplicable", po.StandingCloseNotApplicable)),
-                            new XElement("CrouchingMoves",
-                                new XElement("CrouchingPunch", po.CrouchingPunch),
-                                new XElement("CrouchingSlash", po.CrouchingSlash),
-                                new XElement("CrouchingHeavySlash", po.CrouchingHeavySlash),
-                                new XElement("CrouchingDust", po.CrouchingDust),
-                                new XElement("CrouchingNotApplicable", po.CrouchingNotApplicable)),
-                            new XElement("AdditionalNotes",
-                                new XElement("AdditionalNote", po.AdditionalNotesTextBoxText)),
-                            new XElement("ImportExportLocations",
-                                new XElement("ImportExportLocation", po.ImportExportLocationText))));
+                            new XElement(StriveXMLConstants.StandingFarMoves,
+                                new XElement(StriveXMLConstants.StandingFarPunch, po.StandingFarPunch),
+                                new XElement(StriveXMLConstants.StandingFarKick, po.StandingFarKick),
+                                new XElement(StriveXMLConstants.StandingFarSlash, po.StandingFarSlash),
+                                new XElement(StriveXMLConstants.StandingFarHeavySlash, po.StandingFarHeavySlash),
+                                new XElement(StriveXMLConstants.StandingFarDust, po.StandingFarDust),
+                                new XElement(StriveXMLConstants.StandingFarNotApplicable, po.StandingFarNotApplicable)),
+                            new XElement(StriveXMLConstants.StandingCloseMoves,
+                                new XElement(StriveXMLConstants.StandingClosePunch, po.StandingClosePunch),
+                                new XElement(StriveXMLConstants.StandingCloseKick, po.StandingCloseKick),
+                                new XElement(StriveXMLConstants.StandingCloseSlash, po.StandingCloseSlash),
+                                new XElement(StriveXMLConstants.StandingCloseHeavySlash, po.StandingCloseHeavySlash),
+                                new XElement(StriveXMLConstants.StandingCloseDust, po.StandingCloseDust),
+                                new XElement(StriveXMLConstants.StandingCloseNotApplicable, po.StandingCloseNotApplicable)),
+                            new XElement(StriveXMLConstants.CrouchingMoves,
+                                new XElement(StriveXMLConstants.CrouchingPunch, po.CrouchingPunch),
+                                new XElement(StriveXMLConstants.CrouchingKick, po.CrouchingKick),
+                                new XElement(StriveXMLConstants.CrouchingSlash, po.CrouchingSlash),
+                                new XElement(StriveXMLConstants.CrouchingHeavySlash, po.CrouchingHeavySlash),
+                                new XElement(StriveXMLConstants.CrouchingDust, po.CrouchingDust),
+                                new XElement(StriveXMLConstants.CrouchingNotApplicable, po.CrouchingNotApplicable)),
+                            new XElement(StriveXMLConstants.AdditionalNotes,
+                                new XElement(StriveXMLConstants.AdditionalNote, po.AdditionalNotesTextBoxText)),
+                            new XElement(StriveXMLConstants.ImportExportLocations,
+                                new XElement(StriveXMLConstants.ImportExportLocation, po.ImportExportLocationText))));
 
                 // Write complete XML element as XML page to file.
                 using (StreamWriter sw = new StreamWriter(path))

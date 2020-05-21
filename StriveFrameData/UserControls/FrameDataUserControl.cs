@@ -195,14 +195,74 @@ namespace StriveFrameData.UserControls
                     .Value;
 
                 // Standing close moves
+                solPo.StandingClosePunch = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                solPo.StandingCloseKick = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                solPo.StandingCloseSlash = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                solPo.StandingCloseHeavySlash = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                solPo.StandingCloseDust = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                solPo.StandingCloseNotApplicable = tabSolPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
 
                 // Crouching moves
+                solPo.CrouchingPunch = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
 
+                solPo.CrouchingKick = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                solPo.CrouchingSlash = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                solPo.CrouchingHeavySlash = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                solPo.CrouchingDust = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                solPo.CrouchingNotApplicable = tabSolPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
                 solPo.AdditionalNotesTextBoxText = tabSolPageElement
                     .Element(StriveXMLConstants.AdditionalNotes)
                     .Element(StriveXMLConstants.AdditionalNote)
                     .Value;
 
+                // Export location
                 // Event will fire to fill the remaining pos with ImportExportLocationText in the UI.
                 solPo.ImportExportLocationText = tabSolPageElement
                     .Element(StriveXMLConstants.ImportExportLocations)
@@ -263,7 +323,9 @@ namespace StriveFrameData.UserControls
             }
             catch (Exception e)
             {
-                MessageBox.Show($@"Unable to Import file. Error: {e}", @"Import File Error");
+                MessageBox.Show(@"Unable to Import file." 
+                                + Environment.NewLine 
+                                + $@" Error: {e}", @"Import File Error");
 
                 return new List<MainFrameDataPO>();
             }
