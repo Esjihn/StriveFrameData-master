@@ -279,14 +279,51 @@ namespace StriveFrameData.Builder
                             + StriveXMLConstants.CrouchingNotApplicable + ": " + axlPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                             // Additional Notes
                             + StriveXMLConstants.AdditionalNotes + Environment.NewLine
-                            + StriveXMLConstants.AdditionalNote + ": " + potPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                            + StriveXMLConstants.AdditionalNote + ": " + axlPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
                     axlFrameDataChunk = new Chunk(axlFrameData, FontFactory.GetFont("Arial", 11));
                 }
 
-
                 // Faust
-                // TODO
+                Chunk faustHeaderChunk = new Chunk();
+                Chunk faustFrameDataChunk = new Chunk();
+                MainFrameDataPO faustPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabFaustPage);
+
+                if (faustPo != null)
+                {
+                    faustHeaderChunk = new Chunk("Faust Page", FontFactory.GetFont("Arial Bold", 22));
+
+                    string faustFrameData
+                        // Standing Far Moves
+                        = StriveXMLConstants.StandingFarMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingFarPunch + ": " + faustPo.StandingFarPunch + Environment.NewLine
+                            + StriveXMLConstants.StandingFarKick + ": " + faustPo.StandingFarKick + Environment.NewLine
+                            + StriveXMLConstants.StandingFarSlash + ": " + faustPo.StandingFarSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarHeavySlash + ": " + faustPo.StandingFarHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarDust + ": " + faustPo.StandingFarDust + Environment.NewLine
+                            + StriveXMLConstants.StandingFarNotApplicable + ": " + faustPo.StandingFarNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Standing Close Moves
+                            + StriveXMLConstants.StandingCloseMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingClosePunch + ": " + faustPo.StandingClosePunch + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseKick + ": " + faustPo.StandingCloseKick + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseSlash + ": " + faustPo.StandingCloseSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseHeavySlash + ": " + faustPo.StandingCloseHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseDust + ": " + faustPo.StandingCloseDust + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseNotApplicable + ": " + faustPo.StandingCloseNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Crouching Moves
+                            + StriveXMLConstants.CrouchingMoves + Environment.NewLine
+                            + StriveXMLConstants.CrouchingPunch + ": " + faustPo.CrouchingPunch + Environment.NewLine
+                            + StriveXMLConstants.CrouchingKick + ": " + faustPo.CrouchingKick + Environment.NewLine
+                            + StriveXMLConstants.CrouchingSlash + ": " + faustPo.CrouchingSlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingHeavySlash + ": " + faustPo.CrouchingHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingDust + ": " + faustPo.CrouchingDust + Environment.NewLine
+                            + StriveXMLConstants.CrouchingNotApplicable + ": " + faustPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Additional Notes
+                            + StriveXMLConstants.AdditionalNotes + Environment.NewLine
+                            + StriveXMLConstants.AdditionalNote + ": " + faustPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+
+                    faustFrameDataChunk = new Chunk(faustFrameData, FontFactory.GetFont("Arial", 11));
+                }
 
                 DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
@@ -307,6 +344,8 @@ namespace StriveFrameData.Builder
                 Paragraph potFrameDataParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
                 Paragraph axlHeaderParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
                 Paragraph axlFrameDataParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
+                Paragraph faustHeaderParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
+                Paragraph faustFrameDataParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
 
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
 
@@ -340,6 +379,10 @@ namespace StriveFrameData.Builder
                 // Axl
                 axlHeaderParagraph.Add(axlHeaderChunk);
                 axlFrameDataParagraph.Add(axlFrameDataChunk);
+
+                // Faust
+                faustHeaderParagraph.Add(faustHeaderChunk);
+                faustFrameDataParagraph.Add(faustFrameDataChunk);
 
                 // Dev 
                 creatorParagraph.Add(creatorChunk);
@@ -388,6 +431,12 @@ namespace StriveFrameData.Builder
                 doc.Add(axlHeaderParagraph);
                 doc.Add(singleSpaceParagraph);
                 doc.Add(axlFrameDataParagraph);
+                doc.Add(singleSpaceParagraph);
+
+                // Faust doc
+                doc.Add(faustHeaderParagraph);
+                doc.Add(singleSpaceParagraph);
+                doc.Add(faustFrameDataParagraph);
                 doc.Add(singleSpaceParagraph);
 
                 // Footer doc
