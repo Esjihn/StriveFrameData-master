@@ -161,9 +161,47 @@ namespace StriveFrameData.Builder
                     mayFrameDataChunk = new Chunk(mayFrameData, FontFactory.GetFont("Arial", 11));
                 }
 
-
                 // Chipp
-                // TODO
+                Chunk chippHeaderChunk = new Chunk();
+                Chunk chippFrameDataChunk = new Chunk();
+                MainFrameDataPO chippPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabChippPage);
+
+                if (chippPo != null)
+                {
+                    chippHeaderChunk = new Chunk("Chipp Page", FontFactory.GetFont("Arial Bold", 22));
+
+                    string chippFrameData
+                        // Standing Far Moves
+                        = StriveXMLConstants.StandingFarMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingFarPunch + ": " + chippPo.StandingFarPunch + Environment.NewLine
+                            + StriveXMLConstants.StandingFarKick + ": " + chippPo.StandingFarKick + Environment.NewLine
+                            + StriveXMLConstants.StandingFarSlash + ": " + chippPo.StandingFarSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarHeavySlash + ": " + chippPo.StandingFarHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarDust + ": " + chippPo.StandingFarDust + Environment.NewLine
+                            + StriveXMLConstants.StandingFarNotApplicable + ": " + chippPo.StandingFarNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Standing Close Moves
+                            + StriveXMLConstants.StandingCloseMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingClosePunch + ": " + chippPo.StandingClosePunch + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseKick + ": " + chippPo.StandingCloseKick + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseSlash + ": " + chippPo.StandingCloseSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseHeavySlash + ": " + chippPo.StandingCloseHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseDust + ": " + chippPo.StandingCloseDust + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseNotApplicable + ": " + chippPo.StandingCloseNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Crouching Moves
+                            + StriveXMLConstants.CrouchingMoves + Environment.NewLine
+                            + StriveXMLConstants.CrouchingPunch + ": " + chippPo.CrouchingPunch + Environment.NewLine
+                            + StriveXMLConstants.CrouchingKick + ": " + chippPo.CrouchingKick + Environment.NewLine
+                            + StriveXMLConstants.CrouchingSlash + ": " + chippPo.CrouchingSlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingHeavySlash + ": " + chippPo.CrouchingHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingDust + ": " + chippPo.CrouchingDust + Environment.NewLine
+                            + StriveXMLConstants.CrouchingNotApplicable + ": " + chippPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Additional Notes
+                            + StriveXMLConstants.AdditionalNotes + Environment.NewLine
+                            + StriveXMLConstants.AdditionalNote + ": " + chippPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+
+                    chippFrameDataChunk = new Chunk(chippFrameData, FontFactory.GetFont("Arial", 11));
+                }
+
                 // Potemkin
                 // TODO
                 // Axl
@@ -184,6 +222,8 @@ namespace StriveFrameData.Builder
                 Paragraph kyFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph mayHeaderParagraph = new Paragraph{Alignment = Element.ALIGN_LEFT};
                 Paragraph mayFrameDataParagraph = new Paragraph{Alignment = Element.ALIGN_LEFT};
+                Paragraph chippHeaderParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
+                Paragraph chippFrameDataParagraph = new Paragraph { Alignment = Element.ALIGN_LEFT };
 
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
 
@@ -205,6 +245,10 @@ namespace StriveFrameData.Builder
                 // May
                 mayHeaderParagraph.Add(mayHeaderChunk);
                 mayFrameDataParagraph.Add(mayFrameDataChunk);
+
+                // Chipp
+                chippHeaderParagraph.Add(chippHeaderChunk);
+                chippFrameDataParagraph.Add(chippFrameDataChunk);
                 
                 // Dev 
                 creatorParagraph.Add(creatorChunk);
@@ -235,6 +279,12 @@ namespace StriveFrameData.Builder
                 doc.Add(mayHeaderChunk);
                 doc.Add(singleSpaceParagraph);
                 doc.Add(mayFrameDataParagraph);
+                doc.Add(singleSpaceParagraph);
+
+                // Chipp doc
+                doc.Add(chippHeaderParagraph);
+                doc.Add(singleSpaceParagraph);
+                doc.Add(chippFrameDataParagraph);
                 doc.Add(singleSpaceParagraph);
 
                 // Footer doc
