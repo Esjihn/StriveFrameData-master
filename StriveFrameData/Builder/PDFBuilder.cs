@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Xml;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using StriveFrameData.Constants;
 using StriveFrameData.PresentationObjects;
 
 namespace StriveFrameData.Builder
@@ -18,7 +19,7 @@ namespace StriveFrameData.Builder
         /// </summary>
         /// <param name="list">MainFrameDataPO list</param>
         /// <param name="path">Path and file name for pdf file to be created</param>
-        public void CreatePDFFromMainFrameDataPOList(List<MainFrameDataPO> list, string path)
+        public void CreatePdfFromMainFrameDataPoList(List<MainFrameDataPO> list, string path)
         {
             if (list == null || !list.Any() || string.IsNullOrEmpty(path)) return;
 
@@ -30,41 +31,88 @@ namespace StriveFrameData.Builder
                 PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
                 doc.Open();
 
-                // TODO I already have the list of UI elements as list parameter. Iterate over them and add proper formatting.
+                Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
+                Chunk linkChunk = new Chunk("--------------------------------------------------------------------------" +
+                                            "--------------------------------------------------------------------",
+                    FontFactory.GetFont("Arial", 11));
+                Chunk singleSpaceChunk = new Chunk(Environment.NewLine);
+                Chunk doubleSpaceChunk = new Chunk(Environment.NewLine + Environment.NewLine);
 
-                StringBuilder sb = new StringBuilder();
-                foreach (MainFrameDataPO item in list)
+                // Sol
+                // TODO (finish)
+                Chunk solHeaderChunk = new Chunk();
+                Chunk solFrameDataChunk = new Chunk();
+
+                MainFrameDataPO solPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabSolPage);
+                if (solPo != null)
                 {
-                    
+                    solHeaderChunk = new Chunk("Sol Page", FontFactory.GetFont("Arial Bold", 22));
+
+                    string solFrameData
+                        // Standing Far Moves
+                        = StriveXMLConstants.StandingFarMoves
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarPunch + ": " + solPo.StandingFarPunch
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarKick + ": " + solPo.StandingFarKick
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarSlash + ": " + solPo.StandingFarSlash
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarHeavySlash + ": " + solPo.StandingFarHeavySlash
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarDust + ": " + solPo.StandingFarDust
+                          + Environment.NewLine
+                          + StriveXMLConstants.StandingFarNotApplicable + ": " + solPo.StandingFarNotApplicable
+                          + Environment.NewLine
+                          // Standing Close Moves
+                          + StriveXMLConstants.StandingFarMoves
+                          + Environment.NewLine;
 
 
-
+                    solFrameDataChunk = new Chunk(solFrameData, FontFactory.GetFont("Arial", 11));
                 }
 
-                Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
-                Chunk frameDataChunk = new Chunk(sb.ToString(), FontFactory.GetFont("Arial, 11"));
+                // Ky
+                // TODO 
+                // May
+                // TODO
+                // Chipp
+                // TODO
+                // Potemkin
+                // TODO
+                // Axl
+                // TODO
+                // Faust
+                // TODO
 
                 DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
-                Chunk spaceChunk = new Chunk("--------------------------------------------------------------------------" +
-                                             "--------------------------------------------------------------------", 
-                    FontFactory.GetFont("Arial", 11));
+                
 
                 Paragraph headerParagraph = new Paragraph {Alignment = Element.ALIGN_CENTER};
-                Paragraph frameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
+                Paragraph solHeaderParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
+                Paragraph solFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
-                Paragraph spaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
+                Paragraph lineParagaph = new Paragraph{Alignment = Element.ALIGN_CENTER};
+                Paragraph singleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
+                Paragraph doubleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
                 headerParagraph.Add(headerChunk);
-                frameDataParagraph.Add(frameDataChunk);
+                solHeaderParagraph.Add(solHeaderChunk);
+                solFrameDataParagraph.Add(solFrameDataChunk);
                 creatorParagraph.Add(creatorChunk);
-                spaceParagraph.Add(spaceChunk);
+                lineParagaph.Add(linkChunk);
+                singleSpaceParagraph.Add(singleSpaceChunk);
+                doubleSpaceParagraph.Add(doubleSpaceChunk);
                 
                 doc.Add(headerParagraph);
-                doc.Add(spaceParagraph);
-                doc.Add(frameDataParagraph);
-                doc.Add(spaceParagraph);
+                doc.Add(lineParagaph);
+                doc.Add(singleSpaceParagraph);
+                doc.Add(solHeaderParagraph);
+                doc.Add(singleSpaceParagraph);
+                doc.Add(solFrameDataParagraph);
+                doc.Add(lineParagaph);
                 doc.Add(creatorParagraph);
 
                 doc.Close();

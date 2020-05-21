@@ -177,7 +177,7 @@ namespace StriveFrameData.Presenters
             PDFBuilder pdfBuilder = new PDFBuilder();
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
-                pdfBuilder.CreatePDFFromMainFrameDataPOList(
+                pdfBuilder.CreatePdfFromMainFrameDataPoList(
                     CompleteFrameDataList, 
                     path.ImportExportLocationText + codedPathPdf);
             }
@@ -186,7 +186,7 @@ namespace StriveFrameData.Presenters
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.pdf";
-                pdfBuilder.CreatePDFFromMainFrameDataPOList(CompleteFrameDataList, myPath);
+                pdfBuilder.CreatePdfFromMainFrameDataPoList(CompleteFrameDataList, myPath);
             }
         }
 
