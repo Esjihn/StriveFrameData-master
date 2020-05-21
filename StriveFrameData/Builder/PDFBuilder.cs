@@ -88,7 +88,7 @@ namespace StriveFrameData.Builder
                 {
                     kyHeaderChunk = new Chunk("Ky Page", FontFactory.GetFont("Arial Bold", 22));
 
-                    string solFrameData
+                    string kyFrameData
                         // Standing Far Moves
                         = StriveXMLConstants.StandingFarMoves + Environment.NewLine
                             + StriveXMLConstants.StandingFarPunch + ": " + kyPo.StandingFarPunch + Environment.NewLine
@@ -117,11 +117,51 @@ namespace StriveFrameData.Builder
                             + StriveXMLConstants.AdditionalNotes + Environment.NewLine
                             + StriveXMLConstants.AdditionalNote + ": " + kyPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
-                    kyFrameDataChunk = new Chunk(solFrameData, FontFactory.GetFont("Arial", 11));
+                    kyFrameDataChunk = new Chunk(kyFrameData, FontFactory.GetFont("Arial", 11));
                 }
 
                 // May
-                // TODO
+                Chunk mayHeaderChunk = new Chunk();
+                Chunk mayFrameDataChunk = new Chunk();
+                MainFrameDataPO mayPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabMayPage);
+
+                if (mayPo != null)
+                {
+                    mayHeaderChunk = new Chunk("May Page", FontFactory.GetFont("Arial Bold", 22));
+
+                    string mayFrameData
+                        // Standing Far Moves
+                        = StriveXMLConstants.StandingFarMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingFarPunch + ": " + mayPo.StandingFarPunch + Environment.NewLine
+                            + StriveXMLConstants.StandingFarKick + ": " + mayPo.StandingFarKick + Environment.NewLine
+                            + StriveXMLConstants.StandingFarSlash + ": " + mayPo.StandingFarSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarHeavySlash + ": " + mayPo.StandingFarHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingFarDust + ": " + mayPo.StandingFarDust + Environment.NewLine
+                            + StriveXMLConstants.StandingFarNotApplicable + ": " + mayPo.StandingFarNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Standing Close Moves
+                            + StriveXMLConstants.StandingCloseMoves + Environment.NewLine
+                            + StriveXMLConstants.StandingClosePunch + ": " + mayPo.StandingClosePunch + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseKick + ": " + mayPo.StandingCloseKick + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseSlash + ": " + mayPo.StandingCloseSlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseHeavySlash + ": " + mayPo.StandingCloseHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseDust + ": " + mayPo.StandingCloseDust + Environment.NewLine
+                            + StriveXMLConstants.StandingCloseNotApplicable + ": " + mayPo.StandingCloseNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Crouching Moves
+                            + StriveXMLConstants.CrouchingMoves + Environment.NewLine
+                            + StriveXMLConstants.CrouchingPunch + ": " + mayPo.CrouchingPunch + Environment.NewLine
+                            + StriveXMLConstants.CrouchingKick + ": " + mayPo.CrouchingKick + Environment.NewLine
+                            + StriveXMLConstants.CrouchingSlash + ": " + mayPo.CrouchingSlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingHeavySlash + ": " + mayPo.CrouchingHeavySlash + Environment.NewLine
+                            + StriveXMLConstants.CrouchingDust + ": " + mayPo.CrouchingDust + Environment.NewLine
+                            + StriveXMLConstants.CrouchingNotApplicable + ": " + mayPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
+                            // Additional Notes
+                            + StriveXMLConstants.AdditionalNotes + Environment.NewLine
+                            + StriveXMLConstants.AdditionalNote + ": " + mayPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+
+                    mayFrameDataChunk = new Chunk(mayFrameData, FontFactory.GetFont("Arial", 11));
+                }
+
+
                 // Chipp
                 // TODO
                 // Potemkin
@@ -142,10 +182,12 @@ namespace StriveFrameData.Builder
                 Paragraph solFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph kyHeaderParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
                 Paragraph kyFrameDataParagraph = new Paragraph {Alignment = Element.ALIGN_LEFT};
+                Paragraph mayHeaderParagraph = new Paragraph{Alignment = Element.ALIGN_LEFT};
+                Paragraph mayFrameDataParagraph = new Paragraph{Alignment = Element.ALIGN_LEFT};
 
                 Paragraph creatorParagraph = new Paragraph {Alignment = Element.ALIGN_RIGHT};
 
-                Paragraph lineParagaph = new Paragraph{Alignment = Element.ALIGN_CENTER};
+                Paragraph lineParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 Paragraph singleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 Paragraph doubleSpaceParagraph = new Paragraph{Alignment = Element.ALIGN_CENTER};
                 
@@ -159,6 +201,10 @@ namespace StriveFrameData.Builder
                 // Ky
                 kyHeaderParagraph.Add(kyHeaderChunk);
                 kyFrameDataParagraph.Add(kyFrameDataChunk);
+
+                // May
+                mayHeaderParagraph.Add(mayHeaderChunk);
+                mayFrameDataParagraph.Add(mayFrameDataChunk);
                 
                 // Dev 
                 creatorParagraph.Add(creatorChunk);
@@ -166,11 +212,11 @@ namespace StriveFrameData.Builder
                 // Formatting
                 singleSpaceParagraph.Add(singleSpaceChunk);
                 doubleSpaceParagraph.Add(doubleSpaceChunk);
-                lineParagaph.Add(linkChunk);
+                lineParagraph.Add(linkChunk);
 
                 // Header doc
                 doc.Add(headerParagraph);
-                doc.Add(lineParagaph);
+                doc.Add(lineParagraph);
                 doc.Add(singleSpaceParagraph);
                 
                 // Sol doc
@@ -185,8 +231,14 @@ namespace StriveFrameData.Builder
                 doc.Add(kyFrameDataParagraph);
                 doc.Add(singleSpaceParagraph);
 
+                // May doc
+                doc.Add(mayHeaderChunk);
+                doc.Add(singleSpaceParagraph);
+                doc.Add(mayFrameDataParagraph);
+                doc.Add(singleSpaceParagraph);
+
                 // Footer doc
-                doc.Add(lineParagaph);
+                doc.Add(lineParagraph);
                 doc.Add(creatorParagraph);
 
                 doc.Close();
