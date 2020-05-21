@@ -277,8 +277,105 @@ namespace StriveFrameData.UserControls
                 XElement tabKyPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabKyPage);
 
-                
+                // Standing far Moves
+                kyPo.StandingFarPunch = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
 
+                kyPo.StandingFarKick = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                kyPo.StandingFarSlash = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                kyPo.StandingFarHeavySlash = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                kyPo.StandingFarDust = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                kyPo.StandingFarNotApplicable = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                kyPo.StandingClosePunch = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                kyPo.StandingCloseKick = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                kyPo.StandingCloseSlash = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                kyPo.StandingCloseHeavySlash = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                kyPo.StandingCloseDust = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                kyPo.StandingCloseNotApplicable = tabKyPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                kyPo.CrouchingPunch = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                kyPo.CrouchingKick = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                kyPo.CrouchingSlash = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                kyPo.CrouchingHeavySlash = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                kyPo.CrouchingDust = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                kyPo.CrouchingNotApplicable = tabKyPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                kyPo.AdditionalNotesTextBoxText = tabKyPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
+                
                 importList.Add(kyPo);
 
                 // tabMayPage
@@ -286,6 +383,105 @@ namespace StriveFrameData.UserControls
 
                 XElement tabMayPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabMayPage);
+
+                // Standing far Moves
+                mayPo.StandingFarPunch = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                mayPo.StandingFarKick = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                mayPo.StandingFarSlash = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                mayPo.StandingFarHeavySlash = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                mayPo.StandingFarDust = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                mayPo.StandingFarNotApplicable = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                mayPo.StandingClosePunch = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                mayPo.StandingCloseKick = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                mayPo.StandingCloseSlash = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                mayPo.StandingCloseHeavySlash = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                mayPo.StandingCloseDust = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                mayPo.StandingCloseNotApplicable = tabMayPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                mayPo.CrouchingPunch = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                mayPo.CrouchingKick = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                mayPo.CrouchingSlash = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                mayPo.CrouchingHeavySlash = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                mayPo.CrouchingDust = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                mayPo.CrouchingNotApplicable = tabMayPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                mayPo.AdditionalNotesTextBoxText = tabMayPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
 
                 importList.Add(mayPo);
 
@@ -295,6 +491,105 @@ namespace StriveFrameData.UserControls
                 XElement tabChippPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabChippPage);
 
+                // Standing far Moves
+                chippPo.StandingFarPunch = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                chippPo.StandingFarKick = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                chippPo.StandingFarSlash = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                chippPo.StandingFarHeavySlash = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                chippPo.StandingFarDust = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                chippPo.StandingFarNotApplicable = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                chippPo.StandingClosePunch = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                chippPo.StandingCloseKick = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                chippPo.StandingCloseSlash = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                chippPo.StandingCloseHeavySlash = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                chippPo.StandingCloseDust = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                chippPo.StandingCloseNotApplicable = tabChippPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                chippPo.CrouchingPunch = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                chippPo.CrouchingKick = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                chippPo.CrouchingSlash = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                chippPo.CrouchingHeavySlash = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                chippPo.CrouchingDust = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                chippPo.CrouchingNotApplicable = tabChippPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                chippPo.AdditionalNotesTextBoxText = tabChippPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
+
                 importList.Add(chippPo);
 
                 // tabPotemkinPage
@@ -303,13 +598,211 @@ namespace StriveFrameData.UserControls
                 XElement tabPotemkinPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabPotemkinPage);
 
-;               importList.Add(potPo);
+                // Standing far Moves
+                potPo.StandingFarPunch = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                potPo.StandingFarKick = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                potPo.StandingFarSlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                potPo.StandingFarHeavySlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                potPo.StandingFarDust = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                potPo.StandingFarNotApplicable = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                potPo.StandingClosePunch = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                potPo.StandingCloseKick = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                potPo.StandingCloseSlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                potPo.StandingCloseHeavySlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                potPo.StandingCloseDust = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                potPo.StandingCloseNotApplicable = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                potPo.CrouchingPunch = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                potPo.CrouchingKick = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                potPo.CrouchingSlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                potPo.CrouchingHeavySlash = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                potPo.CrouchingDust = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                potPo.CrouchingNotApplicable = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                potPo.AdditionalNotesTextBoxText = tabPotemkinPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
+                
+                importList.Add(potPo);
 
                 // tabAxlPage
                 MainFrameDataPO axlPo = new MainFrameDataPO();
 
                 XElement tabAxlPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabAxlPage);
+
+                // Standing far Moves
+                axlPo.StandingFarPunch = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                axlPo.StandingFarKick = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                axlPo.StandingFarSlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                axlPo.StandingFarHeavySlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                axlPo.StandingFarDust = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                axlPo.StandingFarNotApplicable = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                axlPo.StandingClosePunch = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                axlPo.StandingCloseKick = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                axlPo.StandingCloseSlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                axlPo.StandingCloseHeavySlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                axlPo.StandingCloseDust = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                axlPo.StandingCloseNotApplicable = tabAxlPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                axlPo.CrouchingPunch = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                axlPo.CrouchingKick = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                axlPo.CrouchingSlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                axlPo.CrouchingHeavySlash = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                axlPo.CrouchingDust = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                axlPo.CrouchingNotApplicable = tabAxlPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                axlPo.AdditionalNotesTextBoxText = tabAxlPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
 
                 importList.Add(axlPo);
 
@@ -319,18 +812,117 @@ namespace StriveFrameData.UserControls
                 XElement tabFaustPageElement = doc.Element(StriveXMLConstants.MainFrameData)
                     .Element(StriveXMLConstants.tabFaustPage);
 
+                // Standing far Moves
+                faustPo.StandingFarPunch = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarPunch)
+                    .Value;
+
+                faustPo.StandingFarKick = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarKick)
+                    .Value;
+
+                faustPo.StandingFarSlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarSlash)
+                    .Value;
+
+                faustPo.StandingFarHeavySlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarHeavySlash)
+                    .Value;
+
+                faustPo.StandingFarDust = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarDust)
+                    .Value;
+
+                faustPo.StandingFarNotApplicable = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingFarMoves)
+                    .Element(StriveXMLConstants.StandingFarNotApplicable)
+                    .Value;
+
+                // Standing close moves
+                faustPo.StandingClosePunch = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingClosePunch)
+                    .Value;
+
+                faustPo.StandingCloseKick = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseKick)
+                    .Value;
+
+                faustPo.StandingCloseSlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseSlash)
+                    .Value;
+
+                faustPo.StandingCloseHeavySlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseHeavySlash)
+                    .Value;
+
+                faustPo.StandingCloseDust = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseDust)
+                    .Value;
+
+                faustPo.StandingCloseNotApplicable = tabFaustPageElement
+                    .Element(StriveXMLConstants.StandingCloseMoves)
+                    .Element(StriveXMLConstants.StandingCloseNotApplicable)
+                    .Value;
+
+                // Crouching moves
+                faustPo.CrouchingPunch = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingPunch)
+                    .Value;
+
+                faustPo.CrouchingKick = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingKick)
+                    .Value;
+
+                faustPo.CrouchingSlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingSlash)
+                    .Value;
+
+                faustPo.CrouchingHeavySlash = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingHeavySlash)
+                    .Value;
+
+                faustPo.CrouchingDust = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingDust)
+                    .Value;
+
+                faustPo.CrouchingNotApplicable = tabFaustPageElement
+                    .Element(StriveXMLConstants.CrouchingMoves)
+                    .Element(StriveXMLConstants.CrouchingNotApplicable)
+                    .Value;
+
+                // Additional notes
+                faustPo.AdditionalNotesTextBoxText = tabFaustPageElement
+                    .Element(StriveXMLConstants.AdditionalNotes)
+                    .Element(StriveXMLConstants.AdditionalNote)
+                    .Value;
+
                 importList.Add(faustPo);
             }
             catch (Exception e)
             {
-                MessageBox.Show(@"Unable to Import file." 
+                MessageBox.Show(@"Unable to Import file. File is either corrupt or xml tags are from a deprecated version of export." 
                                 + Environment.NewLine 
                                 + $@" Error: {e}", @"Import File Error");
 
                 return new List<MainFrameDataPO>();
             }
 
-            MessageBox.Show(@"Import Successful!", @"Success");
+            MessageBox.Show(@"Import Successful! Click 'OK' to update app.", @"Success");
      
             return importList;
         }
