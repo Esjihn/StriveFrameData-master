@@ -23,6 +23,7 @@ namespace StriveFrameData.PresentationObjects
         #endregion
 
         #region Header
+
         // For use with import.
         public string MainFrameDataXmlHeader = "MainFrameDataPO";
 
