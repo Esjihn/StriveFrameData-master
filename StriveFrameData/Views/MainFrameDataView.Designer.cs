@@ -52,89 +52,100 @@
             this.tabCharacters.Font = new System.Drawing.Font("Trebuchet MS", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCharacters.HotTrack = true;
             this.tabCharacters.Location = new System.Drawing.Point(0, 0);
+            this.tabCharacters.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabCharacters.Name = "tabCharacters";
             this.tabCharacters.Padding = new System.Drawing.Point(10, 15);
             this.tabCharacters.SelectedIndex = 0;
-            this.tabCharacters.Size = new System.Drawing.Size(1415, 905);
+            this.tabCharacters.Size = new System.Drawing.Size(772, 490);
             this.tabCharacters.TabIndex = 0;
             // 
             // tabSolPage
             // 
             this.tabSolPage.AutoScroll = true;
             this.tabSolPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabSolPage.Location = new System.Drawing.Point(4, 79);
+            this.tabSolPage.Location = new System.Drawing.Point(4, 60);
+            this.tabSolPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabSolPage.Name = "tabSolPage";
-            this.tabSolPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabSolPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabSolPage.Size = new System.Drawing.Size(764, 426);
             this.tabSolPage.TabIndex = 1;
             this.tabSolPage.Text = "Sol";
             // 
             // tabKyPage
             // 
             this.tabKyPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabKyPage.Location = new System.Drawing.Point(4, 79);
+            this.tabKyPage.Location = new System.Drawing.Point(4, 60);
+            this.tabKyPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabKyPage.Name = "tabKyPage";
-            this.tabKyPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKyPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabKyPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabKyPage.Size = new System.Drawing.Size(764, 426);
             this.tabKyPage.TabIndex = 2;
             this.tabKyPage.Text = "Ky";
             // 
             // tabMayPage
             // 
             this.tabMayPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabMayPage.Location = new System.Drawing.Point(4, 79);
+            this.tabMayPage.Location = new System.Drawing.Point(4, 60);
+            this.tabMayPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabMayPage.Name = "tabMayPage";
-            this.tabMayPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMayPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabMayPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabMayPage.Size = new System.Drawing.Size(764, 426);
             this.tabMayPage.TabIndex = 3;
             this.tabMayPage.Text = "May";
             // 
             // tabChippPage
             // 
             this.tabChippPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabChippPage.Location = new System.Drawing.Point(4, 79);
+            this.tabChippPage.Location = new System.Drawing.Point(4, 60);
+            this.tabChippPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabChippPage.Name = "tabChippPage";
-            this.tabChippPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChippPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabChippPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabChippPage.Size = new System.Drawing.Size(764, 426);
             this.tabChippPage.TabIndex = 4;
             this.tabChippPage.Text = "Chipp";
             // 
             // tabPotemkinPage
             // 
             this.tabPotemkinPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabPotemkinPage.Location = new System.Drawing.Point(4, 79);
+            this.tabPotemkinPage.Location = new System.Drawing.Point(4, 60);
+            this.tabPotemkinPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPotemkinPage.Name = "tabPotemkinPage";
-            this.tabPotemkinPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPotemkinPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabPotemkinPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPotemkinPage.Size = new System.Drawing.Size(764, 426);
             this.tabPotemkinPage.TabIndex = 5;
             this.tabPotemkinPage.Text = "Potemkin";
             // 
             // tabAxlPage
             // 
             this.tabAxlPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabAxlPage.Location = new System.Drawing.Point(4, 79);
+            this.tabAxlPage.Location = new System.Drawing.Point(4, 60);
+            this.tabAxlPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabAxlPage.Name = "tabAxlPage";
-            this.tabAxlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAxlPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabAxlPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAxlPage.Size = new System.Drawing.Size(764, 426);
             this.tabAxlPage.TabIndex = 6;
             this.tabAxlPage.Text = "Axl";
             // 
             // tabFaustPage
             // 
             this.tabFaustPage.BackColor = System.Drawing.Color.LightBlue;
-            this.tabFaustPage.Location = new System.Drawing.Point(4, 79);
+            this.tabFaustPage.Location = new System.Drawing.Point(4, 60);
+            this.tabFaustPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabFaustPage.Name = "tabFaustPage";
-            this.tabFaustPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFaustPage.Size = new System.Drawing.Size(1407, 822);
+            this.tabFaustPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabFaustPage.Size = new System.Drawing.Size(764, 426);
             this.tabFaustPage.TabIndex = 7;
             this.tabFaustPage.Text = "Faust";
             // 
             // MainFrameDataView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1415, 905);
+            this.ClientSize = new System.Drawing.Size(772, 490);
             this.Controls.Add(this.tabCharacters);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "MainFrameDataView";
             this.Text = "Guilty Gear Strive Frame Data";
             this.Load += new System.EventHandler(this.MainFrameDataView_Load);
