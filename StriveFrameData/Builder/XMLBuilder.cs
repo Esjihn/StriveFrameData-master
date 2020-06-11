@@ -31,6 +31,7 @@ namespace StriveFrameData.Builder
                 //      i. Type of move i.e. StandingClose, StandingFar, Crouching groups.
                 //          B. All of the UI elements that represent those types
                 //             i.e. StandingClosePunch and CrouchingKick
+                //                 C. Import/Export location
 
                 XElement element =
                     new XElement(StriveXMLConstants.MainFrameData,

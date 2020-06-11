@@ -31,15 +31,14 @@ namespace StriveFrameData.UserControls
         /// <param name="e"></param>
         private void btnFolderBrowse_Click(object sender, EventArgs e)
         {
-            if (fldrBrowserDialog == null)
+            if (fldrBrowserDialog != null)
             {
                 fldrBrowserDialog.ShowNewFolderButton = true;
-                fldrBrowserDialog.ShowDialog();
-            }
 
-            if (this.fldrBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                txtImportExportFileLocation.Text = fldrBrowserDialog.SelectedPath;
+                if (this.fldrBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.txtImportExportFileLocation.Text = fldrBrowserDialog.SelectedPath;
+                }
             }
         }
 
