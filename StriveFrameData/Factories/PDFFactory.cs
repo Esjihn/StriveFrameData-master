@@ -12,8 +12,13 @@ using StriveFrameData.PresentationObjects;
 
 namespace StriveFrameData.Builder
 {
-    public class PDFBuilder
+    public class PDFFactory
     {
+        /// <summary>
+        /// Singleton PDF Factory
+        /// </summary>
+        public static PDFFactory Factory => new PDFFactory();
+
         /// <summary>
         /// Creates export PDF file.
         /// </summary>
@@ -34,7 +39,7 @@ namespace StriveFrameData.Builder
                 Chunk headerChunk = new Chunk("Frame Data PDF Export", FontFactory.GetFont("Arial", 48));
                 Chunk linkChunk = new Chunk("--------------------------------------------------------------------------" +
                                             "--------------------------------------------------------------------",
-                    FontFactory.GetFont("Arial", 11));
+                                            FontFactory.GetFont("Arial", 11));
                 Chunk singleSpaceChunk = new Chunk(Environment.NewLine);
                 Chunk doubleSpaceChunk = new Chunk(Environment.NewLine + Environment.NewLine);
 

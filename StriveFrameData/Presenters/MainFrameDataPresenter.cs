@@ -174,7 +174,7 @@ namespace StriveFrameData.Presenters
             }
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
-            PDFBuilder pdfBuilder = new PDFBuilder();
+            PDFFactory pdfBuilder = new PDFFactory();
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
                 pdfBuilder.CreatePdfFromMainFrameDataPoList(

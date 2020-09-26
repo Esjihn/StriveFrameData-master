@@ -49,13 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder\PDFBuilder.cs" />
-    <Compile Include="Builder\XMLBuilder.cs" />
+    <Compile Include="DTO\CharacterDTO.cs" />
+    <Compile Include="Factories\PDFFactory.cs" />
+    <Compile Include="Builders\XMLBuilder.cs" />
     <Compile Include="Constants\StriveXMLConstants.cs" />
-    <Compile Include="Helper\FileImportHelper.cs" />
+    <Compile Include="Helpers\FileImportHelper.cs" />
     <Compile Include="Models\FrameDataModel.cs" />
     <Compile Include="PresentationObjects\MainFrameDataPO.cs" />
     <Compile Include="Presenters\MainFrameDataPresenter.cs" />
+    <Compile Include="Repositories\CharacterRepository.cs" />
     <Compile Include="UserControls\FrameDataUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
