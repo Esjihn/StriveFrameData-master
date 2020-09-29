@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using StriveFrameData.Constants;
-using StriveFrameData.Helper;
+using StriveFrameData.Helpers;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
 using StriveFrameData.Views;
