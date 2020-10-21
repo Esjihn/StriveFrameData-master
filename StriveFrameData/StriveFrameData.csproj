@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\CharacterDTO.cs" />
-    <Compile Include="Factories\PDFFactory.cs" />
+    <Compile Include="Builders\PDFBuilder.cs" />
     <Compile Include="Builders\XMLBuilder.cs" />
     <Compile Include="Constants\StriveXMLConstants.cs" />
     <Compile Include="Helpers\FileImportHelper.cs" />
@@ -112,6 +112,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Factories\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

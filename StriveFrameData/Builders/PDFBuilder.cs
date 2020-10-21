@@ -10,15 +10,10 @@ using iTextSharp.text.pdf;
 using StriveFrameData.Constants;
 using StriveFrameData.PresentationObjects;
 
-namespace StriveFrameData.Builder
+namespace StriveFrameData.Builders
 {
-    public class PDFFactory
+    public class PDFBuilder
     {
-        /// <summary>
-        /// Singleton PDF Factory
-        /// </summary>
-        public static PDFFactory Factory => new PDFFactory();
-
         /// <summary>
         /// Creates export PDF file.
         /// </summary>

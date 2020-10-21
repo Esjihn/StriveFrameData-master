@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using StriveFrameData.Builder;
+using StriveFrameData.Builders;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
@@ -174,7 +174,7 @@ namespace StriveFrameData.Presenters
             }
 
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
-            PDFFactory pdfBuilder = new PDFFactory();
+            PDFBuilder pdfBuilder = new PDFBuilder();
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
                 pdfBuilder.CreatePdfFromMainFrameDataPoList(
