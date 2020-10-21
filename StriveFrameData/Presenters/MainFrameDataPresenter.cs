@@ -173,11 +173,11 @@ namespace StriveFrameData.Presenters
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
+            PDFFactory factory = new PDFFactory();
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
-            PDFFactory pdfBuilder = new PDFFactory();
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
-                pdfBuilder.CreatePdfFromMainFrameDataPoList(
+                PDFFactory.Factory.CreatePdfFromMainFrameDataPoList(
                     CompleteFrameDataList, 
                     path.ImportExportLocationText + codedPathPdf);
             }
@@ -186,7 +186,7 @@ namespace StriveFrameData.Presenters
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.pdf";
-                pdfBuilder.CreatePdfFromMainFrameDataPoList(CompleteFrameDataList, myPath);
+                PDFFactory.Factory.CreatePdfFromMainFrameDataPoList(CompleteFrameDataList, myPath);
             }
         }
 
