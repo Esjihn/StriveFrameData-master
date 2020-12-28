@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using StriveFrameData.Constants;
+using StriveFrameData.Builder;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Repositories;
 
-namespace StriveFrameData.Builder
+namespace StriveFrameData.Factories
 {
     public class PDFFactory
     {
@@ -28,7 +25,7 @@ namespace StriveFrameData.Builder
         public void CreatePdfFromMainFrameDataPoList(List<MainFrameDataPO> list, string path)
         {
             bool workComplete = false;
-
+            
             try
             {
                 Document doc = new Document();
@@ -47,8 +44,8 @@ namespace StriveFrameData.Builder
                 Chunk solFrameDataChunk = new Chunk(CharacterRepository.Retrieve.SolFrameData(list), FontFactory.GetFont("Arial", 11));
 
                 // Ky
-                Chunk kyHeaderChunk = kyHeaderChunk = new Chunk("Ky Page", FontFactory.GetFont("Arial Bold", 22)); ;
-                Chunk kyFrameDataChunk = kyFrameDataChunk = new Chunk(CharacterRepository.Retrieve.KyFrameData(list), FontFactory.GetFont("Arial", 11));
+                Chunk kyHeaderChunk = new Chunk("Ky Page", FontFactory.GetFont("Arial Bold", 22)); ;
+                Chunk kyFrameDataChunk = new Chunk(CharacterRepository.Retrieve.KyFrameData(list), FontFactory.GetFont("Arial", 11));
 
                 // May
                 Chunk mayHeaderChunk = new Chunk("May Page", FontFactory.GetFont("Arial Bold", 22));
@@ -76,9 +73,8 @@ namespace StriveFrameData.Builder
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
 
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, headerChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, lineChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc,Element.ALIGN_CENTER, headerChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk); 
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, solHeaderChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, solFrameDataChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, kyHeaderChunk);
@@ -93,10 +89,10 @@ namespace StriveFrameData.Builder
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, axlFrameDataChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, faustHeaderChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, faustFrameDataChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_RIGHT, creatorChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, lineChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, doubleSpaceChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_RIGHT, creatorChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, lineChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, doubleSpaceChunk); 
 
                 doc.Close();
 

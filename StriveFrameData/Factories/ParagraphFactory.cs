@@ -12,12 +12,8 @@ namespace StriveFrameData.Builder
 
         public void CreateParagraph(Document doc, int alignment, Chunk chunk)
         {
-            Paragraph paragraph = new Paragraph
-            {
-                alignment
-            };
-
-            paragraph.Add(chunk);
+            Paragraph paragraph = new Paragraph(chunk);
+            paragraph.Alignment = alignment;
             doc.Add(paragraph);
         }
     }
