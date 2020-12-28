@@ -154,7 +154,7 @@ namespace StriveFrameData.Presenters
             MainFrameDataPO path = CompleteFrameDataList.FirstOrDefault(m => m.ImportExportLocationText != string.Empty);
             DateTime date = DateTime.Now;
             
-            string fileAppendDateFormat = $"{date.Year}{date.Day}{date.Month}{date.Hour}{date.Minute}";
+            string fileAppendDateFormat = $"{date.Year}{date.Day}{date.Month}{date.Hour}{date.Minute}{date.Second}";
             string codedPathXml = @"\" + fileAppendDateFormat + "_FrameData.xml";
             string codedPathPdf = @"\" + fileAppendDateFormat + "_FrameData.pdf";
 
@@ -170,7 +170,7 @@ namespace StriveFrameData.Presenters
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
-            // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
+            // 2. Build Export PDF for easy viewing (leverage PDFFactory)
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
                 PDFFactory.Factory.CreatePdfFromMainFrameDataPoList(
