@@ -1,7 +1,11 @@
-﻿using iTextSharp.text;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using iTextSharp.text;
 
-namespace StriveFrameData.Builder
+namespace StriveFrameData.Factories
 {
     public class ParagraphFactory
     {

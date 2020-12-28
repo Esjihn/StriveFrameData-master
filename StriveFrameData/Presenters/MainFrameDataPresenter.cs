@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using StriveFrameData.Builder;
+using StriveFrameData.Builders;
+using StriveFrameData.Factories;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
@@ -173,7 +170,6 @@ namespace StriveFrameData.Presenters
                 xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
-            PDFFactory factory = new PDFFactory();
             // 2. Build Export PDF for easy viewing (leverage PDFBuilder)
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
