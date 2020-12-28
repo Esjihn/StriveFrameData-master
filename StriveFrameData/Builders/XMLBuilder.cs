@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using StriveFrameData.Constants;
 using StriveFrameData.PresentationObjects;
 
-namespace StriveFrameData.Builder
+namespace StriveFrameData.Builders
 {
     public class XMLBuilder
     {
