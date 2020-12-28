@@ -8,7 +8,5 @@ namespace StriveFrameData.Repositories
 {
     public class CharacterRepository
     {
-        
-
     }
 }
