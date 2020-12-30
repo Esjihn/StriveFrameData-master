@@ -17,7 +17,7 @@ namespace StriveFrameData.Repositories
 
         public string SolFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO solPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabSolPage);
+            MainFrameDataPO solPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabSolPage);
 
             string solFrameData
                        // Standing Far Moves
@@ -52,7 +52,7 @@ namespace StriveFrameData.Repositories
 
         public string KyFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO kyPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabKyPage);
+            MainFrameDataPO kyPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabKyPage);
 
             string kyFrameData
                         // Standing Far Moves
@@ -87,7 +87,7 @@ namespace StriveFrameData.Repositories
 
         public string MayFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO mayPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabMayPage);
+            MainFrameDataPO mayPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabMayPage);
 
             string mayFrameData
                        // Standing Far Moves
@@ -122,7 +122,7 @@ namespace StriveFrameData.Repositories
 
         public string ChippFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO chippPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabChippPage);
+            MainFrameDataPO chippPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabChippPage);
             
             string chippFrameData
                         // Standing Far Moves
@@ -157,7 +157,7 @@ namespace StriveFrameData.Repositories
 
         public string PotemkinFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO potPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabPotemkinPage);
+            MainFrameDataPO potPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabPotemkinPage);
 
             string potFrameData
                 // Standing Far Moves
@@ -192,7 +192,7 @@ namespace StriveFrameData.Repositories
 
         public string AxlFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO axlPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabAxlPage);
+            MainFrameDataPO axlPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabAxlPage);
 
             string axlFrameData
                 // Standing Far Moves
@@ -227,7 +227,7 @@ namespace StriveFrameData.Repositories
 
         public string FaustFrameData(List<MainFrameDataPO> list)
         {
-            MainFrameDataPO faustPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabFaustPage);
+            MainFrameDataPO faustPo = list.Find(l => l.TabPageName == StriveXMLConstants.TabFaustPage);
 
             string faustFrameData
                         // Standing Far Moves

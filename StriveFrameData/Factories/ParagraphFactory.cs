@@ -16,8 +16,7 @@ namespace StriveFrameData.Factories
 
         public void CreateParagraph(Document doc, int alignment, Chunk chunk)
         {
-            Paragraph paragraph = new Paragraph(chunk);
-            paragraph.Alignment = alignment;
+            Paragraph paragraph = new Paragraph(chunk) {Alignment = alignment};
             doc.Add(paragraph);
         }
     }

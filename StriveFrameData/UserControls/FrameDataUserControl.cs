@@ -159,7 +159,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO solPo = new MainFrameDataPO();
 
                 XElement tabSolPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabSolPage);
+                    .Element(StriveXMLConstants.TabSolPage);
 
                 // Standing far Moves
                 solPo.StandingFarPunch = tabSolPageElement
@@ -273,7 +273,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO kyPo = new MainFrameDataPO();
 
                 XElement tabKyPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabKyPage);
+                    .Element(StriveXMLConstants.TabKyPage);
 
                 // Standing far Moves
                 kyPo.StandingFarPunch = tabKyPageElement
@@ -380,7 +380,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO mayPo = new MainFrameDataPO();
 
                 XElement tabMayPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabMayPage);
+                    .Element(StriveXMLConstants.TabMayPage);
 
                 // Standing far Moves
                 mayPo.StandingFarPunch = tabMayPageElement
@@ -487,7 +487,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO chippPo = new MainFrameDataPO();
 
                 XElement tabChippPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabChippPage);
+                    .Element(StriveXMLConstants.TabChippPage);
 
                 // Standing far Moves
                 chippPo.StandingFarPunch = tabChippPageElement
@@ -594,7 +594,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO potPo = new MainFrameDataPO();
 
                 XElement tabPotemkinPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabPotemkinPage);
+                    .Element(StriveXMLConstants.TabPotemkinPage);
 
                 // Standing far Moves
                 potPo.StandingFarPunch = tabPotemkinPageElement
@@ -701,7 +701,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO axlPo = new MainFrameDataPO();
 
                 XElement tabAxlPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabAxlPage);
+                    .Element(StriveXMLConstants.TabAxlPage);
 
                 // Standing far Moves
                 axlPo.StandingFarPunch = tabAxlPageElement
@@ -808,7 +808,7 @@ namespace StriveFrameData.UserControls
                 MainFrameDataPO faustPo = new MainFrameDataPO();
 
                 XElement tabFaustPageElement = doc.Element(StriveXMLConstants.MainFrameData)
-                    .Element(StriveXMLConstants.tabFaustPage);
+                    .Element(StriveXMLConstants.TabFaustPage);
 
                 // Standing far Moves
                 faustPo.StandingFarPunch = tabFaustPageElement
@@ -936,8 +936,7 @@ namespace StriveFrameData.UserControls
             // Tab pages
             for (int i = 0; i < MainFrameDataView.TabPages.Count; i++)
             {
-                MainFrameDataPO mfdPO = new MainFrameDataPO();
-                mfdPO.TabPageName = MainFrameDataView.TabPages[i].Name;
+                MainFrameDataPO mfdPO = new MainFrameDataPO {TabPageName = MainFrameDataView.TabPages[i].Name};
                 // User controls inside tab page
                 for (int j = 0; j < MainFrameDataView.TabPages[i].Controls.Count; j++)
                 {

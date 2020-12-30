@@ -17,13 +17,13 @@ namespace StriveFrameData.Constants
         #endregion
 
         #region TabPages constants
-        public const string tabSolPage = "tabSolPage";
-        public const string tabKyPage = "tabKyPage";
-        public const string tabMayPage = "tabMayPage";
-        public const string tabChippPage = "tabChippPage";
-        public const string tabPotemkinPage = "tabPotemkinPage";
-        public const string tabAxlPage = "tabAxlPage";
-        public const string tabFaustPage = "tabFaustPage";
+        public const string TabSolPage = "tabSolPage";
+        public const string TabKyPage = "tabKyPage";
+        public const string TabMayPage = "tabMayPage";
+        public const string TabChippPage = "tabChippPage";
+        public const string TabPotemkinPage = "tabPotemkinPage";
+        public const string TabAxlPage = "tabAxlPage";
+        public const string TabFaustPage = "tabFaustPage";
         #endregion
 
         #region Moves constants
