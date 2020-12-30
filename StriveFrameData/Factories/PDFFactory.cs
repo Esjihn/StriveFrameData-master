@@ -23,8 +23,6 @@ namespace StriveFrameData.Factories
         /// <param name="path">Path and file name for pdf file to be created</param>
         public void CreatePdfFromMainFrameDataPoList(List<MainFrameDataPO> list, string path)
         {
-            bool workComplete = false;
-
             try
             {
                 Document doc = new Document();
@@ -94,17 +92,12 @@ namespace StriveFrameData.Factories
 
                 doc.Close();
 
-                workComplete = true;
+                MessageBox.Show($@"Location: {path}", @"PDF Export Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
                 MessageBox.Show($@"Reason: {e.Message}", @"Could not Export PDF",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            if (workComplete)
-            {
-                MessageBox.Show($@"Location: {path}", @"PDF Export Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
