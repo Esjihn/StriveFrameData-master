@@ -61,7 +61,7 @@ namespace StriveFrameData.UserControls
                     // Maintain same folder selection across all tab pages.
                     for(int i = 0; i < MainFrameDataPresenter.FrameDataUserControls.Count; i++)
                     {
-                        MainFrameDataPresenter.FrameDataUserControls[i].TxtImportExportFileLocation.Text = txtFileLocation.Text;
+                        MainFrameDataPresenter.FrameDataUserControls[i].TxtImportExportFileLocation = txtFileLocation.Text;
                     }
                 }
             }
@@ -1039,9 +1039,12 @@ namespace StriveFrameData.UserControls
         }
         #endregion
 
-        public RichTextBox TxtImportExportFileLocation
+        #region IFrameDataUserControl
+        public string TxtImportExportFileLocation
         {
-            get { return this.txtImportExportFileLocation; }
+            get => txtImportExportFileLocation.Text; 
+            set => value = this.txtImportExportFileLocation.Text;
         }
+        #endregion
     }
 }

@@ -9,6 +9,6 @@ namespace StriveFrameData.UserControls.UserControl_Interfaces
 {
     public interface IFrameDataUserControl
     {
-        RichTextBox TxtImportExportFileLocation { get; }
+        string TxtImportExportFileLocation { get; set; }
     }
 }
