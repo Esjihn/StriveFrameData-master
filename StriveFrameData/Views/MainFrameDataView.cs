@@ -53,7 +53,7 @@ namespace StriveFrameData.Views
                 // Add user controls to tab pages
                 for (int i = 0; i < MainFrameDataPresenter.FrameDataUserControls.Count; i++)
                 {
-                    TabPages[i].Controls.Add(MainFrameDataPresenter.FrameDataUserControls[i]);
+                    TabPages[i].Controls.Add((Control) MainFrameDataPresenter.FrameDataUserControls[i]);
                 }
             }
 

@@ -192,7 +192,7 @@ namespace StriveFrameData.Presenters
         /// <summary>
         /// List of tabbed frame data user controls as Singleton
         /// </summary>
-        public static List<FrameDataUserControl> FrameDataUserControls { get; set; }
+        public static List<IFrameDataUserControl> FrameDataUserControls { get; set; }
 
         /// <summary>
         /// Complete Frame Data list from UI
@@ -206,15 +206,15 @@ namespace StriveFrameData.Presenters
         {
             _container.RegisterType<IFrameDataUserControl, FrameDataUserControl>();
             
-            List<FrameDataUserControl> userControlList = new List<FrameDataUserControl>();
+            List<IFrameDataUserControl> userControlList = new List<IFrameDataUserControl>();
             
-            FrameDataUserControl fdc = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc2 = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc3 = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc4 = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc5 = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc6 = _container.Resolve<FrameDataUserControl>();
-            FrameDataUserControl fdc7 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc2 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc3 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc4 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc5 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc6 = _container.Resolve<FrameDataUserControl>();
+            IFrameDataUserControl fdc7 = _container.Resolve<FrameDataUserControl>();
             
             userControlList.Add(fdc);
             userControlList.Add(fdc2);
@@ -224,7 +224,7 @@ namespace StriveFrameData.Presenters
             userControlList.Add(fdc6);
             userControlList.Add(fdc7);
 
-            FrameDataUserControls = new List<FrameDataUserControl>();
+            FrameDataUserControls = new List<IFrameDataUserControl>();
             FrameDataUserControls = userControlList;
         }
 
