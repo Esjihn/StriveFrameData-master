@@ -199,6 +199,8 @@ namespace StriveFrameData.Presenters
         /// </summary>
         public void Initialize()
         {
+            // todo some dependency injection to handle this. 
+            
             List<FrameDataUserControl> userControlList = new List<FrameDataUserControl>();
             FrameDataUserControl fdc = new FrameDataUserControl();
             FrameDataUserControl fdc2 = new FrameDataUserControl();
