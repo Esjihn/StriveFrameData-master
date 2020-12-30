@@ -51,9 +51,9 @@
   <ItemGroup>
     <Compile Include="DTO\CharacterDTO.cs" />
     <Compile Include="Factories\ParagraphFactory.cs" />
-    <Compile Include="Factories\PDFBuilder.cs" />
     <Compile Include="Builders\XMLBuilder.cs" />
     <Compile Include="Constants\StriveXMLConstants.cs" />
+    <Compile Include="Factories\PDFFactory.cs" />
     <Compile Include="Helpers\FileImportHelper.cs" />
     <Compile Include="Models\FrameDataModel.cs" />
     <Compile Include="PresentationObjects\MainFrameDataPO.cs" />

@@ -4,7 +4,6 @@ using System.IO;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using StriveFrameData.Builder;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Repositories;
 
@@ -25,7 +24,7 @@ namespace StriveFrameData.Factories
         public void CreatePdfFromMainFrameDataPoList(List<MainFrameDataPO> list, string path)
         {
             bool workComplete = false;
-            
+
             try
             {
                 Document doc = new Document();
@@ -68,13 +67,12 @@ namespace StriveFrameData.Factories
                 Chunk faustFrameDataChunk = new Chunk(CharacterRepository.Retrieve.AxlFrameData(list), FontFactory.GetFont("Arial", 11));
 
                 // Date
-                
                 DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
 
-                ParagraphFactory.Factory.CreateParagraph(doc,Element.ALIGN_CENTER, headerChunk); 
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, headerChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, solHeaderChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, solFrameDataChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, kyHeaderChunk);
@@ -89,10 +87,10 @@ namespace StriveFrameData.Factories
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, axlFrameDataChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, faustHeaderChunk);
                 ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_LEFT, faustFrameDataChunk);
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_RIGHT, creatorChunk); 
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, lineChunk); 
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk); 
-                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, doubleSpaceChunk); 
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_RIGHT, creatorChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, lineChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, singleSpaceChunk);
+                ParagraphFactory.Factory.CreateParagraph(doc, Element.ALIGN_CENTER, doubleSpaceChunk);
 
                 doc.Close();
 
