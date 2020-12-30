@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
-using StriveFrameData.ViewInterfaces;
+using StriveFrameData.Views.ViewInterfaces;
 
 namespace StriveFrameData.Views
 {

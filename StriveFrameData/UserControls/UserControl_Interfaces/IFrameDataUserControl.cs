@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StriveFrameData.ViewInterfaces
+namespace StriveFrameData.UserControls.UserControl_Interfaces
 {
-    public interface IExternalAdditionalNotesView
+    public interface IFrameDataUserControl
     {
     }
 }

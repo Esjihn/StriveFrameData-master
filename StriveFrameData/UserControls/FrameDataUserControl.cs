@@ -11,11 +11,12 @@ using StriveFrameData.Constants;
 using StriveFrameData.Helpers;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.Presenters;
+using StriveFrameData.UserControls.UserControl_Interfaces;
 using StriveFrameData.Views;
 
 namespace StriveFrameData.UserControls
 {
-    public partial class FrameDataUserControl : UserControl
+    public partial class FrameDataUserControl : UserControl, IFrameDataUserControl
     {
         public FrameDataUserControl()
         {

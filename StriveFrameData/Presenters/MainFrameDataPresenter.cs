@@ -6,8 +6,10 @@ using StriveFrameData.Factories;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
 using StriveFrameData.UserControls;
-using StriveFrameData.ViewInterfaces;
+using StriveFrameData.UserControls.UserControl_Interfaces;
 using StriveFrameData.Views;
+using StriveFrameData.Views.ViewInterfaces;
+using Unity;
 
 namespace StriveFrameData.Presenters
 {
@@ -18,15 +20,18 @@ namespace StriveFrameData.Presenters
     {
         private readonly IMainFrameDataView _view;
         private readonly IExternalAdditionalNotesView _externalView;
+        private readonly IUnityContainer _container;
 
         public MainFrameDataPresenter(IMainFrameDataView view)
         {
             _view = view;
+            _container = new UnityContainer();
         }
 
         public MainFrameDataPresenter(IExternalAdditionalNotesView externalView)
         {
             _externalView = externalView;
+            _container = new UnityContainer();
         }
 
         /// <summary>
@@ -199,16 +204,18 @@ namespace StriveFrameData.Presenters
         /// </summary>
         public void Initialize()
         {
-            // todo some dependency injection to handle this. 
+            _container.RegisterType<IFrameDataUserControl, FrameDataUserControl>();
             
             List<FrameDataUserControl> userControlList = new List<FrameDataUserControl>();
-            FrameDataUserControl fdc = new FrameDataUserControl();
-            FrameDataUserControl fdc2 = new FrameDataUserControl();
-            FrameDataUserControl fdc3 = new FrameDataUserControl();
-            FrameDataUserControl fdc4 = new FrameDataUserControl();
-            FrameDataUserControl fdc5 = new FrameDataUserControl();
-            FrameDataUserControl fdc6 = new FrameDataUserControl();
-            FrameDataUserControl fdc7 = new FrameDataUserControl();
+            
+            FrameDataUserControl fdc = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc2 = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc3 = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc4 = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc5 = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc6 = _container.Resolve<FrameDataUserControl>();
+            FrameDataUserControl fdc7 = _container.Resolve<FrameDataUserControl>();
+            
             userControlList.Add(fdc);
             userControlList.Add(fdc2);
             userControlList.Add(fdc3);

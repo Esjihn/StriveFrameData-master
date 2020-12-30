@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StriveFrameData.Presenters;
-using StriveFrameData.ViewInterfaces;
+using StriveFrameData.Views.ViewInterfaces;
 
 namespace StriveFrameData.Views
 {

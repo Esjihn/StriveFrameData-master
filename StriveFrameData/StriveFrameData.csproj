@@ -74,8 +74,9 @@
     <Compile Include="UserControls\FrameDataUserControl.Designer.cs">
       <DependentUpon>FrameDataUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewInterfaces\IExternalAdditionalNotesView.cs" />
-    <Compile Include="ViewInterfaces\IMainFrameDataView.cs" />
+    <Compile Include="UserControls\UserControl_Interfaces\IFrameDataUserControl.cs" />
+    <Compile Include="Views\ViewInterfaces\IExternalAdditionalNotesView.cs" />
+    <Compile Include="Views\ViewInterfaces\IMainFrameDataView.cs" />
     <Compile Include="Views\ExternalAdditionalNotesView.cs">
       <SubType>Form</SubType>
     </Compile>
