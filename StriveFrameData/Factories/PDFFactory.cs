@@ -39,7 +39,7 @@ namespace StriveFrameData.Factories
                 Chunk doubleSpaceChunk = new Chunk(Environment.NewLine + Environment.NewLine);
 
                 // Sol
-                Chunk solHeaderChunk = solHeaderChunk = new Chunk("Sol Page", FontFactory.GetFont("Arial Bold", 22));
+                Chunk solHeaderChunk = new Chunk("Sol Page", FontFactory.GetFont("Arial Bold", 22));
                 Chunk solFrameDataChunk = new Chunk(CharacterRepository.Retrieve.SolFrameData(list), FontFactory.GetFont("Arial", 11));
 
                 // Ky
