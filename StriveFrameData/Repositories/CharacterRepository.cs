@@ -45,7 +45,7 @@ namespace StriveFrameData.Repositories
                            + StriveXMLConstants.CrouchingDust + ": " + solPo.CrouchingDust + Environment.NewLine
                            + StriveXMLConstants.CrouchingNotApplicable + ": " + solPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                            // Additional Notes
-                           + StriveXMLConstants.AdditionalNote + ": " + solPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                           + StriveXMLConstants.AdditionalNotes + ": " + solPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return solFrameData;
         }
@@ -80,7 +80,7 @@ namespace StriveFrameData.Repositories
                             + StriveXMLConstants.CrouchingDust + ": " + kyPo.CrouchingDust + Environment.NewLine
                             + StriveXMLConstants.CrouchingNotApplicable + ": " + kyPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                             // Additional Notes
-                            + StriveXMLConstants.AdditionalNote + ": " + kyPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                            + StriveXMLConstants.AdditionalNotes + ": " + kyPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return kyFrameData;
         }
@@ -115,7 +115,7 @@ namespace StriveFrameData.Repositories
                            + StriveXMLConstants.CrouchingDust + ": " + mayPo.CrouchingDust + Environment.NewLine
                            + StriveXMLConstants.CrouchingNotApplicable + ": " + mayPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                            // Additional Notes
-                           + StriveXMLConstants.AdditionalNote + ": " + mayPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                           + StriveXMLConstants.AdditionalNotes + ": " + mayPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return mayFrameData;
         }
@@ -123,7 +123,7 @@ namespace StriveFrameData.Repositories
         public string ChippFrameData(List<MainFrameDataPO> list)
         {
             MainFrameDataPO chippPo = list.Find(l => l.TabPageName == StriveXMLConstants.tabChippPage);
-           
+            
             string chippFrameData
                         // Standing Far Moves
                         = StriveXMLConstants.StandingFarMoves + Environment.NewLine
@@ -150,7 +150,7 @@ namespace StriveFrameData.Repositories
                             + StriveXMLConstants.CrouchingDust + ": " + chippPo.CrouchingDust + Environment.NewLine
                             + StriveXMLConstants.CrouchingNotApplicable + ": " + chippPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                             // Additional Notes
-                            + StriveXMLConstants.AdditionalNote + ": " + chippPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                            + StriveXMLConstants.AdditionalNotes + ": " + chippPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return chippFrameData;
         }
@@ -185,7 +185,7 @@ namespace StriveFrameData.Repositories
                     + StriveXMLConstants.CrouchingDust + ": " + potPo.CrouchingDust + Environment.NewLine
                     + StriveXMLConstants.CrouchingNotApplicable + ": " + potPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                     // Additional Notes
-                    + StriveXMLConstants.AdditionalNote + ": " + potPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                    + StriveXMLConstants.AdditionalNotes + ": " + potPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return potFrameData;
         }
@@ -220,7 +220,7 @@ namespace StriveFrameData.Repositories
                     + StriveXMLConstants.CrouchingDust + ": " + axlPo.CrouchingDust + Environment.NewLine
                     + StriveXMLConstants.CrouchingNotApplicable + ": " + axlPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                     // Additional Notes
-                    + StriveXMLConstants.AdditionalNote + ": " + axlPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                    + StriveXMLConstants.AdditionalNotes + ": " + axlPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return axlFrameData;
         }
@@ -255,7 +255,7 @@ namespace StriveFrameData.Repositories
                             + StriveXMLConstants.CrouchingDust + ": " + faustPo.CrouchingDust + Environment.NewLine
                             + StriveXMLConstants.CrouchingNotApplicable + ": " + faustPo.CrouchingNotApplicable + Environment.NewLine + Environment.NewLine
                             // Additional Notes
-                            + StriveXMLConstants.AdditionalNote + ": " + faustPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
+                            + StriveXMLConstants.AdditionalNotes + ": " + faustPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
             return faustFrameData;
         }

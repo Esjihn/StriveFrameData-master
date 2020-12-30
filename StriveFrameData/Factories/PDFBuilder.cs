@@ -67,7 +67,6 @@ namespace StriveFrameData.Factories
                 Chunk faustFrameDataChunk = new Chunk(CharacterRepository.Retrieve.AxlFrameData(list), FontFactory.GetFont("Arial", 11));
 
                 // Date
-
                 DateTime date = DateTime.Now;
                 Chunk creatorChunk = new Chunk($"Developer: Matthew Miller, Email: sysnom@gmail.com, Export Date: {date}",
                     FontFactory.GetFont("Arial", 11));
