@@ -257,7 +257,6 @@ namespace StriveFrameData.Repositories
                             // Additional Notes
                             + StriveXMLConstants.AdditionalNote + ": " + faustPo.AdditionalNotesTextBoxText + Environment.NewLine + Environment.NewLine;
 
-
             return faustFrameData;
         }
     }

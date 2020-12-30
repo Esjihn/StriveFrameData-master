@@ -36,7 +36,7 @@ namespace StriveFrameData.Builders
                 XElement element =
                     new XElement(StriveXMLConstants.MainFrameData,
                         from po in list
-                        select new XElement(po.TabPageName,
+                        select new XElement(po.TabPageName, 
                             new XElement(StriveXMLConstants.StandingFarMoves,
                                 new XElement(StriveXMLConstants.StandingFarPunch, po.StandingFarPunch),
                                 new XElement(StriveXMLConstants.StandingFarKick, po.StandingFarKick),
