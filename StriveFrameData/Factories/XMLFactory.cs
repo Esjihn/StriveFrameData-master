@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using StriveFrameData.Constants;
 using StriveFrameData.PresentationObjects;
 
-namespace StriveFrameData.Builders
+namespace StriveFrameData.Factories
 {
-    public class XMLBuilder
+    public class XMLFactory
     {
+        /// <summary>
+        /// Singleton PDF Factory
+        /// </summary>
+        public static XMLFactory Factory => new XMLFactory();
+
         /// <summary>
         /// Creates XML Export file.
         /// </summary>

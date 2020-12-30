@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using StriveFrameData.Builders;
 using StriveFrameData.Factories;
 using StriveFrameData.Models;
 using StriveFrameData.PresentationObjects;
@@ -149,8 +148,7 @@ namespace StriveFrameData.Presenters
         /// </summary>
         public void ExportData()
         {
-            // 1. Build Export XML for import (leverage XMLBuilder)
-            XMLBuilder xmlBuilder = new XMLBuilder();
+            // 1. Build Export XML for import (leverage XMLFactory)
             MainFrameDataPO path = CompleteFrameDataList.FirstOrDefault(m => m.ImportExportLocationText != string.Empty);
             DateTime date = DateTime.Now;
             
@@ -160,14 +158,14 @@ namespace StriveFrameData.Presenters
 
             if (path != null && !string.IsNullOrEmpty(path.ImportExportLocationText))
             {
-                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPathXml);
+                XMLFactory.Factory.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, path.ImportExportLocationText + codedPathXml);
             }
             else
             {
                 // Place into my documents folder if user hasn't set an actual folder
                 string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string myPath = myDocuments + @"\" + fileAppendDateFormat + "_FrameData.xml";
-                xmlBuilder.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
+                XMLFactory.Factory.CreateXMLFromMainFrameDataPOList(CompleteFrameDataList, myPath);
             }
 
             // 2. Build Export PDF for easy viewing (leverage PDFFactory)
